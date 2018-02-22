@@ -3,7 +3,6 @@ package com.kaushikthedeveloper.doublebackpress;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
-import android.widget.Toast;
 
 import com.kaushikthedeveloper.doublebackpress.helper.Callable;
 
@@ -13,72 +12,72 @@ import com.kaushikthedeveloper.doublebackpress.helper.Callable;
  */
 public class DoubleBackPress extends Activity {
     private Context context;
-    private String intermMessage;
-    private Callable superBackPressed;
-    private int waitDuration;
+    private Callable superBackPress;
+    private int doublePressDuration;
 
-    private boolean singleBackPressDone;
+    private boolean singleBackPressOccurred;
 
     /**
      * Constructor
-     * @param context : pass Application's context
-     * @param intermMessage : message to be shown on 1st back press
-     * @param waitDuration : duration of contention for the double back press (msec)
-     * @param superBackPressed : Application's implementation of Back press
+     *
+     * @param context        : pass Application's context
+     * @param doublePressDuration   : duration of contention for the double back press (msec)
+     * @param superBackPress : Application's implementation of Back press
      */
-    public DoubleBackPress(Context context, String intermMessage, int waitDuration, Callable superBackPressed) {
+    public DoubleBackPress(Context context, int doublePressDuration, Callable superBackPress) {
         this.context = context;
-        this.intermMessage = intermMessage;
-        this.waitDuration = waitDuration;
-        this.superBackPressed = superBackPressed;
-        this.singleBackPressDone = false;
+        this.doublePressDuration = doublePressDuration;
+        this.superBackPress = superBackPress;
+        this.singleBackPressOccurred = false;
     }
 
     /**
      * Constructor
      * Should be used as Builder class with the .with... functions
      */
-    public DoubleBackPress(){
-        this.singleBackPressDone = false;
+    public DoubleBackPress() {
+        this.singleBackPressOccurred = false;
+
+        this.context = null;
+        this.doublePressDuration = -1;
+        this.superBackPress = null;
     }
 
     /**
      * Builder function for setting context
+     *
      * @param context : pass Application's context
      * @return DoubleBackPress
      */
-    public DoubleBackPress withContext(Context context){
+    public DoubleBackPress withContext(Context context) {
         this.context = context;
         return this;
     }
 
-    /**
-     * Builder function for setting intermediate message
-     * @param intermMessage : message to be shown on 1st back press
-     * @return DoubleBackPress
-     */
-    public DoubleBackPress withIntermMsg(String intermMessage){
-        this.intermMessage = intermMessage;
-        return this;
-    }
 
     /**
      * Builder function for setting the super.backpressed function
+     *
      * @param superBackPressed : Application's implementation of Back press
      * @return DoubleBackPress
      */
-    public DoubleBackPress withSuperBackPressed(Callable superBackPressed){
-        this.superBackPressed = superBackPressed;
+    public DoubleBackPress withSuperBackPressed(Callable superBackPressed) {
+        this.superBackPress = superBackPressed;
         return this;
     }
 
     /**
      * Builder function for setting the wait duration for the second back press (msec)
+     *
      * @param waitDuration : duration of contention for the double back press
      * @return DoubleBackPress
      */
-    public DoubleBackPress withWaitDuration(int waitDuration){
-        this.waitDuration = waitDuration;
+    public DoubleBackPress withWaitDuration(int waitDuration) {
+        this.doublePressDuration = waitDuration;
+        return this;
+    }
+
+    public DoubleBackPress withIntermediateDisplay() {
         return this;
     }
 
@@ -87,25 +86,28 @@ public class DoubleBackPress extends Activity {
      */
     @Override
     public void onBackPressed() {
-        // second back press
-        if (singleBackPressDone) {
-            superBackPressed.callableFunction();
+        // if Back press occurs within doublePressDuration , calls the super backPress method
+        if (singleBackPressOccurred) {
+            superBackPress.callableFunction();
             return;
         }
 
         // first back press occurred
-        singleBackPressDone = true;
+        singleBackPressOccurred = true;
 
-        // toast on first back press
-        Toast.makeText(context, intermMessage, Toast.LENGTH_SHORT).show();
+        resetBackPressFlagHandler();
+    }
 
-        // loop to return doubleBackPressed = false ; when time expires but no second back press
-        // if Back pressed with waitDuration , calls the super method
+    /**
+     * Handler which resets flag : singleBackPressOccurred
+     * => when the second BackPress does not occur in the given period of time
+     */
+    private void resetBackPressFlagHandler() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                singleBackPressDone = false;
+                singleBackPressOccurred = false;
             }
-        }, waitDuration);
+        }, doublePressDuration);
     }
 }

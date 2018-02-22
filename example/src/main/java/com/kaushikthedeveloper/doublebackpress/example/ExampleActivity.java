@@ -21,7 +21,6 @@ public class ExampleActivity extends AppCompatActivity {
     };
     DoubleBackPress doubleBackPress = new DoubleBackPress()
             .withContext(this)
-            .withIntermMsg("Double Back Press")
             .withWaitDuration(5000)
             .withSuperBackPressed(superBackPressed);
 
