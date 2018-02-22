@@ -46,7 +46,8 @@ class FlowManager extends EnvironmentVariables{
      */
     public boolean checkRequirementsFulfilled(){
         if(!requirementsMet()){
-
+            String throwMsg = requirementNotMetMsg();
+            // error module
         }
         // all requirements have been met
         return true;
