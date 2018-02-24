@@ -1,49 +1,20 @@
 package com.kaushikthedeveloper.doublebackpress.setup;
 
-import android.content.Context;
-
-import com.kaushikthedeveloper.doublebackpress.helper.Callable;
+import com.kaushikthedeveloper.doublebackpress.display.IntermediateDisplay;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 22-02-2018.
  * <p>
- * Contains the Required Environment variables involved
+ * Contains the Environment variables involved
  */
-class EnvironmentVariables extends RequirementsConsolidator {
-    private Context context;
-    private Callable superBackPress;
-    private Integer doublePressDuration;
+class EnvironmentVariables extends RequiredVariables {
+    private IntermediateDisplay intermediateDisplay = null;
 
-    public EnvironmentVariables() {
-        this.context = null;
-        this.superBackPress = null;
-        this.doublePressDuration = null;
+    public void setIntermediateDisplay(IntermediateDisplay intermediateDisplay) {
+        this.intermediateDisplay = intermediateDisplay;
     }
 
-    public void setContext(Context context) {
-        this.context = context;
-        contextIsSet();
-    }
-
-    public void setDoublePressDuration(int doublePressDuration) {
-        this.doublePressDuration = doublePressDuration;
-        doublePressDurationIsSet();
-    }
-
-    public void setSuperBackPress(Callable superBackPress) {
-        this.superBackPress = superBackPress;
-        superBackPressedIsSet();
-    }
-
-    public Context getContext() {
-        return context;
-    }
-
-    public int getDoublePressDuration() {
-        return doublePressDuration;
-    }
-
-    public Callable getSuperBackPress() {
-        return superBackPress;
+    public IntermediateDisplay getIntermediateDisplay() {
+        return intermediateDisplay;
     }
 }

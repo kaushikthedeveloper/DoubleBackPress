@@ -2,13 +2,15 @@ package com.kaushikthedeveloper.doublebackpress;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 
 import com.kaushikthedeveloper.doublebackpress.helper.Callable;
 import com.kaushikthedeveloper.doublebackpress.setup.FlowManager;
 
 /**
- * Double Back Press operation
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 04-02-2018.
+ * <p>
+ * Double Back Press
  */
 public class DoubleBackPress extends Activity {
     FlowManager flowManager = new FlowManager();
@@ -76,6 +78,9 @@ public class DoubleBackPress extends Activity {
      */
     @Override
     public void onBackPressed() {
+        // check that all required variables have been set
+        flowManager.checkRequiredVariablesSet();
+
         // if Back press occurs within doublePressDuration : calls the application's super.onBackPressed()
         if (flowManager.isFirstBackPressed()) {
             flowManager.getSuperBackPress().callableFunction();
@@ -84,8 +89,7 @@ public class DoubleBackPress extends Activity {
 
         firstBackPressOccurred();
 
-        // Handler to reset the firstBackPressed flag after countdown
-        // reset occurs only if the Second Back press does not occur before the timeout
+        // Handler to reset the firstBackPressed flag after timeout(doublePressDuration)
         flowManager.resetBackPressFlagHandler();
     }
 
@@ -94,5 +98,6 @@ public class DoubleBackPress extends Activity {
      */
     private void firstBackPressOccurred() {
         flowManager.setFirstBackPressed(true);
+        Log.d("NPK", "1");
     }
 }

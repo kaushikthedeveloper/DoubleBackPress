@@ -9,7 +9,7 @@ import com.kaushikthedeveloper.doublebackpress.setup.errors.ErrorsManager;
  * <p>
  * Manage the state of the DoubleBackPress module
  */
-public class FlowManager extends EnvironmentVariables {
+public class FlowManager extends RequirementsConsolidator {
     private boolean firstBackPressed;
 
     /**
@@ -41,15 +41,14 @@ public class FlowManager extends EnvironmentVariables {
     }
 
     /**
-     * Checks if all requirements have been met
-     * If met => true; proceed forward
-     * else => throw Exception; let user know requirements are unfulfilled
+     * Checks if all required variables have been set
      *
-     * @return boolean
+     * @return : true; if all required variables are set (can proceed forward in the application)
+     * : throw RequirementsNotMetException; let user know requirements are unfulfilled
      */
-    public boolean checkRequirementsFulfilled() {
-        if (!requirementsMet()) {
-            throw ErrorsManager.requirementsNotMet(unmetRequirementsMessageList());
+    public boolean checkRequiredVariablesSet() {
+        if (!verifyRequiredVariablesSet()) {
+            throw ErrorsManager.requirementsNotMet(requiredVariablesNotSetMessages());
         }
         // all requirements have been met
         return true;

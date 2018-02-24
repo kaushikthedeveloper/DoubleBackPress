@@ -21,7 +21,7 @@ public class ExampleActivity extends AppCompatActivity {
     };
     DoubleBackPress doubleBackPress = new DoubleBackPress()
             .withContext(this)
-            .withDoublePressDuration(5000)
+            .withDoublePressDuration(2000)
             .withSuperBackPressed(superBackPressed);
 
     @Override

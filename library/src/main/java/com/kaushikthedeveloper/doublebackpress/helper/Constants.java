@@ -2,7 +2,7 @@ package com.kaushikthedeveloper.doublebackpress.helper;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 22-02-2018.
- *
+ * <p>
  * Holds all static Constant variables
  */
 public class Constants {
