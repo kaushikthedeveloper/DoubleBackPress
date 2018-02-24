@@ -6,15 +6,15 @@ import com.kaushikthedeveloper.doublebackpress.helper.Callable;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 22-02-2018.
- *
+ * <p>
  * Contains the Required Environment variables involved
  */
-public class EnvironmentVariables extends RequirementsConsolidator{
+class EnvironmentVariables extends RequirementsConsolidator {
     private Context context;
     private Callable superBackPress;
     private Integer doublePressDuration;
 
-    public EnvironmentVariables(){
+    public EnvironmentVariables() {
         this.context = null;
         this.superBackPress = null;
         this.doublePressDuration = null;

@@ -11,7 +11,7 @@ import java.util.List;
  * Keeps track of the stauts of the environment variables
  * => Confirms that the required environment variables are set
  */
-public class RequirementsConsolidator {
+class RequirementsConsolidator {
     private boolean contextSet;
     private boolean superBackPressSet;
     private boolean doublePressDurationSet;
@@ -29,10 +29,8 @@ public class RequirementsConsolidator {
     }
 
     /**
-     * true; all required variables have been set
-     * false; not all required variables have been set
-     *
-     * @return
+     * @return : true; all required variables have been set
+     *         : false; not all required variables have been set
      */
     boolean requirementsMet() {
         return contextSet && superBackPressSet && doublePressDurationSet;

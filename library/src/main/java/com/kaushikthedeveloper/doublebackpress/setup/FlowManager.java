@@ -29,7 +29,7 @@ public class FlowManager extends EnvironmentVariables {
 
     /**
      * Handler which resets flag : singleBackPressOccurred
-     * => when the second BackPress does not occur in the given period of time
+     * times out => when the second BackPress does not occur in the given period of time (doubleBackPress)
      */
     public void resetBackPressFlagHandler() {
         new Handler().postDelayed(new Runnable() {

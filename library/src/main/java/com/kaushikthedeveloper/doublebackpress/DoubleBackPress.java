@@ -16,9 +16,9 @@ public class DoubleBackPress extends Activity {
     /**
      * Constructor
      *
-     * @param context        : pass Application's context
-     * @param doublePressDuration   : duration of contention for the double back press (msec)
-     * @param superBackPress : Application's implementation of Back press
+     * @param context             : pass Application's context
+     * @param doublePressDuration : duration of contention for the double back press (msec)
+     * @param superBackPress      : Application's implementation of Back press
      */
     public DoubleBackPress(Context context, int doublePressDuration, Callable superBackPress) {
         flowManager.setContext(context);
@@ -35,6 +35,7 @@ public class DoubleBackPress extends Activity {
     }
 
     /**
+     * REQUIRED
      * Builder function for setting context
      *
      * @param context : pass Application's context
@@ -47,6 +48,7 @@ public class DoubleBackPress extends Activity {
 
 
     /**
+     * REQUIRED
      * Builder function for setting the wait duration for the second back press (msec)
      *
      * @param doublePressDuration : duration of contention for the double back press
@@ -58,6 +60,7 @@ public class DoubleBackPress extends Activity {
     }
 
     /**
+     * REQUIRED
      * Builder function for setting the super.backpressed function
      *
      * @param superBackPress : Application's implementation of Back press
@@ -73,7 +76,7 @@ public class DoubleBackPress extends Activity {
      */
     @Override
     public void onBackPressed() {
-        // if Back press occurs within doublePressDuration , calls the super backPress method
+        // if Back press occurs within doublePressDuration : calls the application's super.onBackPressed()
         if (flowManager.isFirstBackPressed()) {
             flowManager.getSuperBackPress().callableFunction();
             return;
@@ -82,13 +85,14 @@ public class DoubleBackPress extends Activity {
         firstBackPressOccurred();
 
         // Handler to reset the firstBackPressed flag after countdown
+        // reset occurs only if the Second Back press does not occur before the timeout
         flowManager.resetBackPressFlagHandler();
     }
 
     /**
-     * First back press occurred
+     * First back press occurred : set the FirstBackPressed flag
      */
-    private void firstBackPressOccurred(){
+    private void firstBackPressOccurred() {
         flowManager.setFirstBackPressed(true);
     }
 }
