@@ -12,7 +12,13 @@ import com.kaushikthedeveloper.doublebackpress.helper.Callable;
 public class EnvironmentVariables extends RequirementsConsolidator{
     private Context context;
     private Callable superBackPress;
-    private int doublePressDuration;
+    private Integer doublePressDuration;
+
+    public EnvironmentVariables(){
+        this.context = null;
+        this.superBackPress = null;
+        this.doublePressDuration = null;
+    }
 
     public void setContext(Context context) {
         this.context = context;

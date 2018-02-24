@@ -9,13 +9,13 @@ import com.kaushikthedeveloper.doublebackpress.setup.errors.ErrorsManager;
  * <p>
  * Manage the state of the DoubleBackPress module
  */
-class FlowManager extends EnvironmentVariables {
+public class FlowManager extends EnvironmentVariables {
     private boolean firstBackPressed;
 
     /**
      * At the start, no Back press has occurred
      */
-    FlowManager() {
+    public FlowManager() {
         firstBackPressed = false;
     }
 
@@ -31,7 +31,7 @@ class FlowManager extends EnvironmentVariables {
      * Handler which resets flag : singleBackPressOccurred
      * => when the second BackPress does not occur in the given period of time
      */
-    private void resetBackPressFlagHandler() {
+    public void resetBackPressFlagHandler() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
