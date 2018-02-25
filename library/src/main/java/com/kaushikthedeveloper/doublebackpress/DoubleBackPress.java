@@ -2,6 +2,7 @@ package com.kaushikthedeveloper.doublebackpress;
 
 import android.app.Activity;
 import android.content.Context;
+import android.widget.Toast;
 
 import com.kaushikthedeveloper.doublebackpress.helper.IntermediateDisplay;
 import com.kaushikthedeveloper.doublebackpress.helper.SuperBackPressCallable;
@@ -113,6 +114,7 @@ public class DoubleBackPress extends Activity {
      */
     private void firstBackPressOccurred() {
         flowManager.setFirstBackPressed(true);
+//        Toast.makeText(flowManager.getContext(), "1", Toast.LENGTH_SHORT).show();
         if (flowManager.verifyIntermediateDisplaySet())
             flowManager.getIntermediateDisplay().showIntermediateDisplay();
     }

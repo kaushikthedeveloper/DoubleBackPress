@@ -1,6 +1,7 @@
 package com.kaushikthedeveloper.doublebackpress.setup.display;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.widget.Toast;
 
@@ -11,7 +12,7 @@ import com.kaushikthedeveloper.doublebackpress.helper.IntermediateDisplay;
  * <p>
  * Toast - Intermediate Display
  */
-public class ToastDisplay implements IntermediateDisplay {
+public class ToastDisplay extends Activity implements IntermediateDisplay {
     private Toast toast;
 
     /**
@@ -44,7 +45,7 @@ public class ToastDisplay implements IntermediateDisplay {
      */
     @SuppressLint("ShowToast")
     public ToastDisplay standard(Context context) {
-        this.toast = Toast.makeText(context, "Press back again", Toast.LENGTH_SHORT);
+        this.toast = Toast.makeText(context.getApplicationContext(), "Press back again", Toast.LENGTH_SHORT);
         return this;
     }
 

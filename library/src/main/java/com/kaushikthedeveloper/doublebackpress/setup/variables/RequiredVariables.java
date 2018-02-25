@@ -29,11 +29,11 @@ class RequiredVariables {
         this.superBackPress = superBackPress;
     }
 
-    Context getContext() {
+    public Context getContext() {
         return context;
     }
 
-    protected Integer getDoublePressDuration() {
+    public Integer getDoublePressDuration() {
         return doublePressDuration;
     }
 

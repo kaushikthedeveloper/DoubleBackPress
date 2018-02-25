@@ -9,7 +9,7 @@ import com.kaushikthedeveloper.doublebackpress.helper.IntermediateDisplay;
  */
 class OptionalEnvironmentVariables extends RequiredVariables {
     // Intermediate display : shown after first back press
-    IntermediateDisplay intermediateDisplay = null;
+    private IntermediateDisplay intermediateDisplay = null;
 
     public void setIntermediateDisplay(IntermediateDisplay intermediateDisplay) {
         this.intermediateDisplay = intermediateDisplay;
