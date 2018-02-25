@@ -26,7 +26,6 @@ public class DoubleBackPress extends Activity {
         flowManager.setContext(context);
         flowManager.setDoublePressDuration(doublePressDuration);
         flowManager.setSuperBackPress(superBackPress);
-        flowManager.setFirstBackPressed(false);
     }
 
     /**
@@ -98,6 +97,5 @@ public class DoubleBackPress extends Activity {
      */
     private void firstBackPressOccurred() {
         flowManager.setFirstBackPressed(true);
-        Log.d("NPK", "1");
     }
 }
