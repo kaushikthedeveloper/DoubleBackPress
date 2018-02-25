@@ -14,7 +14,7 @@ class RequiredVariables {
     private Context context = null;
     // application's super.backPressed() function passed using the Callable
     private Callable superBackPress = null;
-    // timeout duration for waiting for the Second Back press
+    // timeout duration : waiting for the Second Back press
     private Integer doublePressDuration = null;
 
     public void setContext(Context context) {

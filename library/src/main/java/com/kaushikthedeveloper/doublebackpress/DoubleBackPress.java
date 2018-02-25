@@ -2,8 +2,6 @@ package com.kaushikthedeveloper.doublebackpress;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
-
 import com.kaushikthedeveloper.doublebackpress.helper.Callable;
 import com.kaushikthedeveloper.doublebackpress.setup.FlowManager;
 
@@ -73,6 +71,7 @@ public class DoubleBackPress extends Activity {
     }
 
     /**
+     * MAIN FUNCTION : all the required operations happen from here
      * Overrides the Back press functionality
      */
     @Override
