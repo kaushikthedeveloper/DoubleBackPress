@@ -2,10 +2,10 @@ package com.kaushikthedeveloper.doublebackpress.helper;
 
 /**
  * Interface
- * Used to pass functions
+ * Callable : Used to pass super.onBackPressed() functions
  * <p>
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 18-02-2018.
  */
-public interface Callable {
-    void callableFunction();
+public interface SuperBackPressCallable {
+    void superBackPressFunction();
 }

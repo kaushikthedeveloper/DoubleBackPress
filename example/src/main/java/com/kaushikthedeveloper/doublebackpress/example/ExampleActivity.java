@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.kaushikthedeveloper.doublebackpress.DoubleBackPress;
-import com.kaushikthedeveloper.doublebackpress.helper.Callable;
+import com.kaushikthedeveloper.doublebackpress.helper.SuperBackPressCallable;
 
 public class ExampleActivity extends AppCompatActivity {
     @Override
@@ -13,16 +13,16 @@ public class ExampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_example);
     }
 
-    Callable superBackPressed = new Callable() {
+    SuperBackPressCallable superBackPressCallable = new SuperBackPressCallable() {
         @Override
-        public void callableFunction() {
+        public void superBackPressFunction() {
             ExampleActivity.super.onBackPressed();
         }
     };
     DoubleBackPress doubleBackPress = new DoubleBackPress()
             .withContext(this)
             .withDoublePressDuration(2000)
-            .withSuperBackPressed(superBackPressed);
+            .withSuperBackPress(superBackPressCallable);
 
     @Override
     public void onBackPressed() {

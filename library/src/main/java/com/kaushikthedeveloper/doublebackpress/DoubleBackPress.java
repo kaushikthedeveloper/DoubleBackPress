@@ -2,9 +2,8 @@ package com.kaushikthedeveloper.doublebackpress;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 
-import com.kaushikthedeveloper.doublebackpress.helper.Callable;
+import com.kaushikthedeveloper.doublebackpress.helper.SuperBackPressCallable;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 04-02-2018.
@@ -21,7 +20,7 @@ public class DoubleBackPress extends Activity {
      * @param doublePressDuration : duration of contention for the double back press (msec)
      * @param superBackPress      : Application's implementation of Back press
      */
-    public DoubleBackPress(Context context, int doublePressDuration, Callable superBackPress) {
+    public DoubleBackPress(Context context, int doublePressDuration, SuperBackPressCallable superBackPress) {
         flowManager.setContext(context);
         flowManager.setDoublePressDuration(doublePressDuration);
         flowManager.setSuperBackPress(superBackPress);
@@ -66,7 +65,7 @@ public class DoubleBackPress extends Activity {
      * @param superBackPress : Application's implementation of Back press
      * @return DoubleBackPress
      */
-    public DoubleBackPress withSuperBackPressed(Callable superBackPress) {
+    public DoubleBackPress withSuperBackPress(SuperBackPressCallable superBackPress) {
         flowManager.setSuperBackPress(superBackPress);
         return this;
     }
@@ -82,7 +81,7 @@ public class DoubleBackPress extends Activity {
 
         // if Back press occurs within doublePressDuration : calls the application's super.onBackPressed()
         if (flowManager.isFirstBackPressed()) {
-            flowManager.getSuperBackPress().callableFunction();
+            flowManager.getSuperBackPress().superBackPressFunction();
             return;
         }
 
@@ -97,6 +96,5 @@ public class DoubleBackPress extends Activity {
      */
     private void firstBackPressOccurred() {
         flowManager.setFirstBackPressed(true);
-        Log.d("NPK","1");
     }
 }
