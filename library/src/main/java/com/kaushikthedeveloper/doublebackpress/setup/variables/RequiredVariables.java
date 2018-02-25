@@ -17,23 +17,23 @@ class RequiredVariables {
     // timeout duration (msec) : waiting for the Second Back press
     private Integer doublePressDuration = null;
 
-    protected void setContext(Context context) {
+    public void setContext(Context context) {
         this.context = context;
     }
 
-    protected void setDoublePressDuration(int doublePressDuration) {
+    public void setDoublePressDuration(int doublePressDuration) {
         this.doublePressDuration = doublePressDuration;
     }
 
-    protected void setSuperBackPress(Callable superBackPress) {
+    public void setSuperBackPress(Callable superBackPress) {
         this.superBackPress = superBackPress;
     }
 
-    Context getContext() {
+    public Context getContext() {
         return context;
     }
 
-    protected Integer getDoublePressDuration() {
+    public Integer getDoublePressDuration() {
         return doublePressDuration;
     }
 

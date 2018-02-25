@@ -2,6 +2,8 @@ package com.kaushikthedeveloper.doublebackpress;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
+
 import com.kaushikthedeveloper.doublebackpress.helper.Callable;
 
 /**
@@ -95,5 +97,6 @@ public class DoubleBackPress extends Activity {
      */
     private void firstBackPressOccurred() {
         flowManager.setFirstBackPressed(true);
+        Log.d("NPK","1");
     }
 }

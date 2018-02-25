@@ -10,7 +10,7 @@ import com.kaushikthedeveloper.doublebackpress.setup.display.IntermediateDisplay
 class EnvironmentVariables extends RequiredVariables {
     private IntermediateDisplay intermediateDisplay = null;
 
-    protected void setIntermediateDisplay(IntermediateDisplay intermediateDisplay) {
+    public void setIntermediateDisplay(IntermediateDisplay intermediateDisplay) {
         this.intermediateDisplay = intermediateDisplay;
     }
 
