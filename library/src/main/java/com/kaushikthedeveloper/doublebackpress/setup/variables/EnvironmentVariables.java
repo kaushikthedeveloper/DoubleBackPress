@@ -1,20 +1,12 @@
 package com.kaushikthedeveloper.doublebackpress.setup.variables;
 
-import com.kaushikthedeveloper.doublebackpress.setup.display.IntermediateDisplay;
-
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 22-02-2018.
  * <p>
- * Contains the Environment variables involved
+ * Contains the Environment variables involved (variables that are not always required)
  */
 class EnvironmentVariables extends RequiredVariables {
-    private IntermediateDisplay intermediateDisplay = null;
-
-    public void setIntermediateDisplay(IntermediateDisplay intermediateDisplay) {
-        this.intermediateDisplay = intermediateDisplay;
-    }
-
-    public IntermediateDisplay getIntermediateDisplay() {
-        return intermediateDisplay;
-    }
+    //
+    // in case other requirements appear in the feature
+    //
 }
