@@ -12,7 +12,7 @@ import java.util.List;
  * => Confirms that the variables are set
  * => Provides error messages
  */
-public class RequirementsConsolidator extends EnvironmentVariables {
+public class RequirementsConsolidator extends OptionalEnvironmentVariables {
 
     /**
      * @return : true; if the required variables are set
@@ -20,6 +20,14 @@ public class RequirementsConsolidator extends EnvironmentVariables {
      */
     protected boolean verifyRequiredVariablesSet() {
         return !(getContext() == null || getDoublePressDuration() == null || getSuperBackPress() == null);
+    }
+
+    /**
+     * @return : true; if the Intermediate display has been set
+     * : false; if the Intermediate display has not been set
+     */
+    public boolean verifyIntermediateDisplaySet() {
+        return !(getIntermediateDisplay() == null);
     }
 
     /**

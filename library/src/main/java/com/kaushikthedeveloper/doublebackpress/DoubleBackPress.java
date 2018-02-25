@@ -3,6 +3,7 @@ package com.kaushikthedeveloper.doublebackpress;
 import android.app.Activity;
 import android.content.Context;
 
+import com.kaushikthedeveloper.doublebackpress.helper.IntermediateDisplay;
 import com.kaushikthedeveloper.doublebackpress.helper.SuperBackPressCallable;
 
 /**
@@ -71,7 +72,21 @@ public class DoubleBackPress extends Activity {
     }
 
     /**
+     * OPTIONAL
+     * Display to be shown upon first back press
+     *
+     * @param intermediateDisplay : Element to be displayed after the First Back Press
+     * @return DoubleBackPress
+     */
+    public DoubleBackPress withIntermediateDisplay(IntermediateDisplay intermediateDisplay) {
+        flowManager.setIntermediateDisplay(intermediateDisplay);
+        return this;
+    }
+
+
+    /**
      * MAIN FUNCTION : all the required operations happen from here
+     * <p>
      * Overrides the Back press functionality
      */
     @Override
@@ -93,8 +108,12 @@ public class DoubleBackPress extends Activity {
 
     /**
      * First back press occurred : set the FirstBackPressed flag
+     * <p>
+     * Also, in case user has set IntermediateDisplay, display it
      */
     private void firstBackPressOccurred() {
         flowManager.setFirstBackPressed(true);
+        if (flowManager.verifyIntermediateDisplaySet())
+            flowManager.getIntermediateDisplay().showIntermediateDisplay();
     }
 }

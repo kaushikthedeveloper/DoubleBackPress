@@ -7,7 +7,7 @@ import com.kaushikthedeveloper.doublebackpress.helper.SuperBackPressCallable;
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 24-02-2018.
  * <p>
- * REQUIRED Variables : should always be set
+ * REQUIRED Environment Variables : should always be set
  */
 class RequiredVariables {
     // application's context
@@ -29,11 +29,11 @@ class RequiredVariables {
         this.superBackPress = superBackPress;
     }
 
-    public Context getContext() {
+    Context getContext() {
         return context;
     }
 
-    public Integer getDoublePressDuration() {
+    protected Integer getDoublePressDuration() {
         return doublePressDuration;
     }
 

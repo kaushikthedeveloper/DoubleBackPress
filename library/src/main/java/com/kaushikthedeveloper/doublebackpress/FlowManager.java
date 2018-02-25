@@ -36,7 +36,7 @@ class FlowManager extends RequirementsConsolidator {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                firstBackPressed = false;
+                setFirstBackPressed(false);
             }
         }, getDoublePressDuration());
     }

@@ -1,10 +1,10 @@
-package com.kaushikthedeveloper.doublebackpress.setup.display.elements;
+package com.kaushikthedeveloper.doublebackpress.setup.display;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.kaushikthedeveloper.doublebackpress.setup.display.IntermediateDisplay;
+import com.kaushikthedeveloper.doublebackpress.helper.IntermediateDisplay;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 19-02-2018.
