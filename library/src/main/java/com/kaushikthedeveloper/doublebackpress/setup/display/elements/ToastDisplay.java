@@ -1,8 +1,8 @@
-package com.kaushikthedeveloper.doublebackpress.display.elements;
+package com.kaushikthedeveloper.doublebackpress.setup.display.elements;
 
 import android.widget.Toast;
 
-import com.kaushikthedeveloper.doublebackpress.display.IntermediateDisplay;
+import com.kaushikthedeveloper.doublebackpress.setup.display.IntermediateDisplay;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 19-02-2018.

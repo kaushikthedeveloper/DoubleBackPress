@@ -1,4 +1,4 @@
-package com.kaushikthedeveloper.doublebackpress.display;
+package com.kaushikthedeveloper.doublebackpress.setup.display;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 19-02-2018.

@@ -1,6 +1,6 @@
-package com.kaushikthedeveloper.doublebackpress.setup;
+package com.kaushikthedeveloper.doublebackpress.setup.variables;
 
-import com.kaushikthedeveloper.doublebackpress.display.IntermediateDisplay;
+import com.kaushikthedeveloper.doublebackpress.setup.display.IntermediateDisplay;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 22-02-2018.
@@ -10,7 +10,7 @@ import com.kaushikthedeveloper.doublebackpress.display.IntermediateDisplay;
 class EnvironmentVariables extends RequiredVariables {
     private IntermediateDisplay intermediateDisplay = null;
 
-    public void setIntermediateDisplay(IntermediateDisplay intermediateDisplay) {
+    protected void setIntermediateDisplay(IntermediateDisplay intermediateDisplay) {
         this.intermediateDisplay = intermediateDisplay;
     }
 

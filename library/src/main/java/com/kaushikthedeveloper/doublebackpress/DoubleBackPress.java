@@ -3,7 +3,6 @@ package com.kaushikthedeveloper.doublebackpress;
 import android.app.Activity;
 import android.content.Context;
 import com.kaushikthedeveloper.doublebackpress.helper.Callable;
-import com.kaushikthedeveloper.doublebackpress.setup.FlowManager;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 04-02-2018.

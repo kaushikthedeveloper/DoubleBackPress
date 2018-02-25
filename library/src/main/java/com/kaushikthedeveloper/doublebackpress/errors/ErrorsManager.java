@@ -1,4 +1,4 @@
-package com.kaushikthedeveloper.doublebackpress.setup.errors;
+package com.kaushikthedeveloper.doublebackpress.errors;
 
 import java.util.List;
 

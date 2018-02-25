@@ -1,9 +1,9 @@
-package com.kaushikthedeveloper.doublebackpress.display.elements;
+package com.kaushikthedeveloper.doublebackpress.setup.display.elements;
 
 
 import android.support.design.widget.Snackbar;
 
-import com.kaushikthedeveloper.doublebackpress.display.IntermediateDisplay;
+import com.kaushikthedeveloper.doublebackpress.setup.display.IntermediateDisplay;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 20-02-2018.

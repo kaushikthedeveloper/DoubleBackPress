@@ -1,4 +1,4 @@
-package com.kaushikthedeveloper.doublebackpress.setup;
+package com.kaushikthedeveloper.doublebackpress.setup.variables;
 
 import com.kaushikthedeveloper.doublebackpress.helper.Constants;
 
@@ -12,13 +12,13 @@ import java.util.List;
  * => Confirms that the variables are set
  * => Provides error messages
  */
-class RequirementsConsolidator extends EnvironmentVariables {
+public class RequirementsConsolidator extends EnvironmentVariables {
 
     /**
      * @return : true; if the required variables are set
      * : false; if the required variables are not set
      */
-    boolean verifyRequiredVariablesSet() {
+    protected boolean verifyRequiredVariablesSet() {
         return !(getContext() == null || getDoublePressDuration() == null || getSuperBackPress() == null);
     }
 
@@ -28,7 +28,7 @@ class RequirementsConsolidator extends EnvironmentVariables {
      *
      * @return List<message>
      */
-    List<String> requiredVariablesNotSetMessages() {
+    protected List<String> requiredVariablesNotSetMessages() {
         List<String> messages = new ArrayList<>();
         if (getContext() == null)
             messages.add(Constants.CONTEXT_NOT_SET);

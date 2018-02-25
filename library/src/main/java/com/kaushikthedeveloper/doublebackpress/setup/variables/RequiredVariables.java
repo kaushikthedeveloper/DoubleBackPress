@@ -1,4 +1,4 @@
-package com.kaushikthedeveloper.doublebackpress.setup;
+package com.kaushikthedeveloper.doublebackpress.setup.variables;
 
 import android.content.Context;
 
@@ -14,18 +14,18 @@ class RequiredVariables {
     private Context context = null;
     // application's super.backPressed() function passed using the Callable
     private Callable superBackPress = null;
-    // timeout duration : waiting for the Second Back press
+    // timeout duration (msec) : waiting for the Second Back press
     private Integer doublePressDuration = null;
 
-    public void setContext(Context context) {
+    protected void setContext(Context context) {
         this.context = context;
     }
 
-    public void setDoublePressDuration(int doublePressDuration) {
+    protected void setDoublePressDuration(int doublePressDuration) {
         this.doublePressDuration = doublePressDuration;
     }
 
-    public void setSuperBackPress(Callable superBackPress) {
+    protected void setSuperBackPress(Callable superBackPress) {
         this.superBackPress = superBackPress;
     }
 
@@ -33,7 +33,7 @@ class RequiredVariables {
         return context;
     }
 
-    Integer getDoublePressDuration() {
+    protected Integer getDoublePressDuration() {
         return doublePressDuration;
     }
 
