@@ -2,10 +2,9 @@ package com.kaushikthedeveloper.doublebackpress;
 
 import android.app.Activity;
 import android.content.Context;
-import android.widget.Toast;
 
-import com.kaushikthedeveloper.doublebackpress.helper.IntermediateDisplay;
-import com.kaushikthedeveloper.doublebackpress.helper.SuperBackPressCallable;
+import com.kaushikthedeveloper.doublebackpress.helper.FirstBackPressAction;
+import com.kaushikthedeveloper.doublebackpress.helper.DoubleBackPressAction;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 04-02-2018.
@@ -18,14 +17,12 @@ public class DoubleBackPress extends Activity {
     /**
      * Constructor
      *
-     * @param context             : pass Application's context
-     * @param doublePressDuration : duration of contention for the double back press (msec)
-     * @param superBackPress      : Application's implementation of Back press
+     * @param doublePressDuration   : duration of contention for the double back press (msec)
+     * @param doubleBackPressAction : Action Interface - after DoubleBackPress occurs
      */
-    public DoubleBackPress(Context context, int doublePressDuration, SuperBackPressCallable superBackPress) {
-        flowManager.setContext(context);
+    public DoubleBackPress(Context context, int doublePressDuration, DoubleBackPressAction doubleBackPressAction) {
         flowManager.setDoublePressDuration(doublePressDuration);
-        flowManager.setSuperBackPress(superBackPress);
+        flowManager.setDoubleBackPressAction(doubleBackPressAction);
     }
 
     /**
@@ -34,19 +31,6 @@ public class DoubleBackPress extends Activity {
      */
     public DoubleBackPress() {
     }
-
-    /**
-     * REQUIRED
-     * Builder function for setting context
-     *
-     * @param context : pass Application's context
-     * @return DoubleBackPress
-     */
-    public DoubleBackPress withContext(Context context) {
-        this.flowManager.setContext(context);
-        return this;
-    }
-
 
     /**
      * REQUIRED
@@ -62,13 +46,13 @@ public class DoubleBackPress extends Activity {
 
     /**
      * REQUIRED
-     * Builder function for setting the super.backpressed function
+     * Builder function for setting the action after DoubleBackPress function
      *
-     * @param superBackPress : Application's implementation of Back press
+     * @param doubleBackPressAction : Action Interface - after DoubleBackPress occurs
      * @return DoubleBackPress
      */
-    public DoubleBackPress withSuperBackPress(SuperBackPressCallable superBackPress) {
-        flowManager.setSuperBackPress(superBackPress);
+    public DoubleBackPress withDoubleBackPressAction(DoubleBackPressAction doubleBackPressAction) {
+        flowManager.setDoubleBackPressAction(doubleBackPressAction);
         return this;
     }
 
@@ -76,11 +60,11 @@ public class DoubleBackPress extends Activity {
      * OPTIONAL
      * Display to be shown upon first back press
      *
-     * @param intermediateDisplay : Element to be displayed after the First Back Press
+     * @param firstBackPressAction : Action Interface - after 1st BackPress occurs
      * @return DoubleBackPress
      */
-    public DoubleBackPress withIntermediateDisplay(IntermediateDisplay intermediateDisplay) {
-        flowManager.setIntermediateDisplay(intermediateDisplay);
+    public DoubleBackPress withFirstBackPressAction(FirstBackPressAction firstBackPressAction) {
+        flowManager.setFirstBackPressAction(firstBackPressAction);
         return this;
     }
 
@@ -95,9 +79,9 @@ public class DoubleBackPress extends Activity {
         // check that all required variables have been set
         flowManager.checkRequiredVariablesSet();
 
-        // if Back press occurs within doublePressDuration : calls the application's super.onBackPressed()
+        // if Back press occurs within doublePressDuration => calls the application's DoubleBackPress Action
         if (flowManager.isFirstBackPressed()) {
-            flowManager.getSuperBackPress().superBackPressFunction();
+            flowManager.getDoubleBackPressAction().actionCall();
             return;
         }
 
@@ -110,12 +94,11 @@ public class DoubleBackPress extends Activity {
     /**
      * First back press occurred : set the FirstBackPressed flag
      * <p>
-     * Also, in case user has set IntermediateDisplay, display it
+     * Also, in case user has set FirstBackPressAction, execute it
      */
     private void firstBackPressOccurred() {
         flowManager.setFirstBackPressed(true);
-//        Toast.makeText(flowManager.getContext(), "1", Toast.LENGTH_SHORT).show();
-        if (flowManager.verifyIntermediateDisplaySet())
-            flowManager.getIntermediateDisplay().showIntermediateDisplay();
+        if (flowManager.verifyFirstBackPressActionSet())
+            flowManager.getFirstBackPressAction().actionCall();
     }
 }

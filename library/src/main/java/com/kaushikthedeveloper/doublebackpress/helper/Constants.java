@@ -9,7 +9,6 @@ public class Constants {
     private Constants() {
     }
 
-    public static final String CONTEXT_NOT_SET = "APPLICATION CONTEXT NOT PROVIDED.";
-    public static final String SUPER_BACK_PRESS_NOT_SET = "SUPER BACK PRESS FUNCTION NOT PROVIDED.";
+    public static final String DOUBLE_BACK_PRESS_ACTION_NOT_SET = "DOUBLE BACK PRESS ACTION NOT PROVIDED.";
     public static final String DOUBLE_PRESS_DURATION_NOT_SET = "DOUBLE BACK PRESS DURATION NOT PROVIDED.";
 }

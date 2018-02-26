@@ -19,15 +19,15 @@ public class RequirementsConsolidator extends OptionalEnvironmentVariables {
      * : false; if the required variables are not set
      */
     protected boolean verifyRequiredVariablesSet() {
-        return !(getContext() == null || getDoublePressDuration() == null || getSuperBackPress() == null);
+        return !(getDoublePressDuration() == null || getDoubleBackPressAction() == null);
     }
 
     /**
-     * @return : true; if the Intermediate display has been set
-     * : false; if the Intermediate display has not been set
+     * @return : true; if the firstBackPressAction has been set
+     * : false; if the firstBackPressAction has not been set
      */
-    public boolean verifyIntermediateDisplaySet() {
-        return !(getIntermediateDisplay() == null);
+    public boolean verifyFirstBackPressActionSet() {
+        return !(getFirstBackPressAction() == null);
     }
 
     /**
@@ -38,12 +38,10 @@ public class RequirementsConsolidator extends OptionalEnvironmentVariables {
      */
     protected List<String> requiredVariablesNotSetMessages() {
         List<String> messages = new ArrayList<>();
-        if (getContext() == null)
-            messages.add(Constants.CONTEXT_NOT_SET);
         if (getDoublePressDuration() == null)
             messages.add(Constants.DOUBLE_PRESS_DURATION_NOT_SET);
-        if (getSuperBackPress() == null)
-            messages.add(Constants.SUPER_BACK_PRESS_NOT_SET);
+        if (getDoubleBackPressAction() == null)
+            messages.add(Constants.DOUBLE_BACK_PRESS_ACTION_NOT_SET);
         return messages;
     }
 }

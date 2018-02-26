@@ -102,7 +102,7 @@ The library provides double back press functionality, i.e., actions taken upon c
     Below is an example where after the DoubleBackPress, the Activity calls its original `onBackPressed()` method.
 
     ```java
-    DoubleBackPressAction superBackPressCallable = new DoubleBackPressAction() {
+    DoubleBackPressAction doubleBackPressAction = new DoubleBackPressAction() {
         @Override
         public void actionCall() {
             ExampleActivity.super.onBackPressed();
@@ -125,7 +125,7 @@ The library provides double back press functionality, i.e., actions taken upon c
     ```java
     FirstBackPressAction firstBackPressAction = new FirstBackPressAction() {
         @Override
-        public void showIntermediateDisplay() {
+        public void actionCall() {
             Toast.makeText(ExampleActivity.this, "Press back again to Exit", Toast.LENGTH_SHORT).show();
         }
     };

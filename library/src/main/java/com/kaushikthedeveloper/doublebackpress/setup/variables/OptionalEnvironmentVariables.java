@@ -1,6 +1,6 @@
 package com.kaushikthedeveloper.doublebackpress.setup.variables;
 
-import com.kaushikthedeveloper.doublebackpress.helper.IntermediateDisplay;
+import com.kaushikthedeveloper.doublebackpress.helper.FirstBackPressAction;
 
 /**
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 22-02-2018.
@@ -8,14 +8,14 @@ import com.kaushikthedeveloper.doublebackpress.helper.IntermediateDisplay;
  * Contains the other environment variables involved
  */
 class OptionalEnvironmentVariables extends RequiredVariables {
-    // Intermediate display : shown after first back press
-    private IntermediateDisplay intermediateDisplay = null;
+    // actions passed : to be executed after 1st Back press
+    private FirstBackPressAction firstBackPressAction = null;
 
-    public void setIntermediateDisplay(IntermediateDisplay intermediateDisplay) {
-        this.intermediateDisplay = intermediateDisplay;
+    public void setFirstBackPressAction(FirstBackPressAction firstBackPressAction) {
+        this.firstBackPressAction = firstBackPressAction;
     }
 
-    public IntermediateDisplay getIntermediateDisplay() {
-        return intermediateDisplay;
+    public FirstBackPressAction getFirstBackPressAction() {
+        return firstBackPressAction;
     }
 }
