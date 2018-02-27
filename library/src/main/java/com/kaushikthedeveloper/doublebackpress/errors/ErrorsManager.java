@@ -8,8 +8,9 @@ import java.util.List;
  * Error handling module designed to throw errors at appropriate times
  */
 public class ErrorsManager extends RuntimeException {
+    private static final long serialVersionUID = 1L;
 
-    public ErrorsManager(String message) {
+	public ErrorsManager(String message) {
         super(message);
     }
 
