@@ -2,13 +2,16 @@
 
 The module is in the extremely painful process of being completely remodeled. As always, thank you for your patience.
 
-**In case of extreme emergency to try out the module ;-) , download the [First commit's Snapshot](https://github.com/kaushikthedeveloper/DoubleBackPress/tree/634d3b242240b81e8006e1afc677f8a1c1ba4b6e) of the project and refer to the example code to get workings!**
+**In case of extreme emergency to try out the module ;-) , download the [First commit's Snapshot](
+https://github.com/kaushikthedeveloper/DoubleBackPress/tree/634d3b242240b81e8006e1afc677f8a1c1ba4b6e) of the project and refer to 
+the example code to get workings!**
 
 ## About
 
 ### Usage
 
-The library provides double back press functionality, i.e., actions taken upon clicking of back button twice in short (custom predefined) interval of time.
+The library provides double back press functionality, i.e., actions taken upon clicking of back button twice in short 
+(custom predefined) interval of time.
 
 ### Main Functionalities
 
@@ -34,6 +37,13 @@ The library provides double back press functionality, i.e., actions taken upon c
                 .withFirstBackPressAction(...);                                                         //optional
     ```
 
+    or
+    
+    ```java
+    DoubleBackPress doubleBackPress = new DoubleBackPress();
+    doubleBackPress.set...(...);                       //setter methods
+    ```
+
     Put the behaviour of the DoubleBackPress as the desired behaviour upon back button click.
 
     ```java
@@ -45,7 +55,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 ---
 
-2. Setting the environment using `with...` methods for the constructor.
+2. Setting the environment using `with...` methods for the DoubleBackPress constructor.
 
     - Set the duration within which the 2nd back press needs to occur to be considered a Double Back Press.
 
@@ -62,8 +72,8 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `DoubleBackPress`
 
-        **Throws later if not set:**
-        - `RequirementsNotMetException` : if the doublePressDuration is not set
+        **Exceptions possible later :**
+        - `RequirementsNotMetException` : if the `doublePressDuration` is not set
 
         ---
 
@@ -82,8 +92,8 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `DoubleBackPress`
 
-        **Throws later if not set:**
-        - `RequirementsNotMetException` : if the doubleBackPressAction is not set
+        **Exceptions possible later :**
+        - `RequirementsNotMetException` : if the `doubleBackPressAction` is not set
 
         ---
 
@@ -104,7 +114,66 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 ---
 
-3. Create object of `DoubleBackPressAction`
+3. Setting the environment using `set...` methods for the DoubleBackPress object.
+
+    - Set the duration within which the 2nd back press needs to occur to be considered a Double Back Press.
+
+        **REQUIRED**
+
+        ```java
+        .setDoublePressDuration(int doublePressDuration)
+        ```
+
+        **Parameters :**
+        - `doublePressDuration` : int
+            => msec duration period, within which the back press should occur again to be counted as a DoubleBackPress
+
+        **Returns :**
+        - `void`
+
+        **Exceptions possible later :**
+        - `RequirementsNotMetException` : if the `doublePressDuration` is not set
+
+        ---
+
+    - Set the action to be performed after the DoubleBackPress occurs.
+
+        **REQUIRED**
+
+        ```java
+        .setDoubleBackPressAction(DoubleBackPressAction doubleBackPressAction)
+        ```
+
+        **Parameters :**
+        - `doubleBackPressAction` : DoubleBackPressAction
+            => The action that should be performed after DoubleBackPress
+
+        **Returns :**
+        - `void`
+
+        **Exceptions possible later :**
+        - `RequirementsNotMetException` : if the `doubleBackPressAction` is not set
+
+        ---
+
+    - Set the action to be performed after the first back press occurs, before the 2nd back press.
+
+        **OPTIONAL**
+
+        ```java
+        .setFirstBackPressAction(FirstBackPressAction firstBackPressAction)
+        ```
+
+        **Parameters :**
+        - `firstBackPressAction` : FirstBackPressAction
+            => The action that should be performed after the first back button click, before the 2nd back press.
+
+        **Returns :**
+        - `void`
+
+---
+
+4. Create object of `DoubleBackPressAction`
 
     Passed in :
 
@@ -127,7 +196,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 ---
 
-4. Create object of `FirstBackPressAction`
+5. Create object of `FirstBackPressAction`
 
     Passed in :
 
@@ -150,11 +219,12 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 ---
 
-5. Standard displays after the first action to be shown to the user:
+6. Standard displays after the first action to be shown to the user:
 
     - `ToastDisplay` : standard Toast
 
-        Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to confirm".
+        Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading 
+        "Press back button to confirm".
 
         ```java
         FirstBackPressAction firstBackPressAction = new ToastDisplay()
@@ -165,7 +235,8 @@ The library provides double back press functionality, i.e., actions taken upon c
                     ...
         ```
 
-        Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to Exit".
+        Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading 
+        "Press back button to Exit".
 
         ```java
         FirstBackPressAction firstBackPressAction = new ToastDisplay()
@@ -175,12 +246,38 @@ The library provides double back press functionality, i.e., actions taken upon c
                     .withFirstBackPressAction(firstBackPressAction)
                     ...
         ```
+        
+    - `SnackbarDisplay` : standard Snackbar
+
+        ***Note : Since Snackbar require the callers's parent view, the SnackbarDisplay class needs to be set and provided to the 
+        DoubleBackPress object after the View is set. Example, in an Activity, this would be inside the onCreate() function, 
+        after the setContentView() function is called.***
+
+        Example to show snackbar for `Snackbar.LENGTH_SHORT` period of time upon the first back button press, with a message 
+        reading "Press back button to confirm".
+
+        ```java
+        //after the view is initialized
+        FirstBackPressAction firstBackPressAction = new Snackbar()
+                    .standard(parentView);                                        //required
+
+        doubleBackPress.setFirstBackPressAction(firstBackPressAction)
+        ```
+
+        Example to show snackbar for `Snackbar.LENGTH_SHORT` period of time upon the first back button press, with a message reading 
+        "Press back button to Exit".
+
+        ```java
+        //after the view is initialized
+        FirstBackPressAction firstBackPressAction = new Snackbar()
+                    .standard(parentView, "Press back button to Exit");            //required
+
+        doubleBackPress.setFirstBackPressAction(firstBackPressAction)
+        ```
 
 ---
 
-6. Options provided for the ToastDisplay constructor :
-
-    *Note : Use either of the two standard methods depending on requirements*
+7. Options provided for the ToastDisplay constructor :
 
     - Set the context for the Toast
 
@@ -193,10 +290,10 @@ The library provides double back press functionality, i.e., actions taken upon c
             => Set the Context for the Toast to be displayed
 
         **Returns :**
-        - `FirstBackPressAction`
+        - `ToastDisplay`
 
-        **Throws later if not set:**
-        - `RequirementsNotMetException` : if the context is not set
+        **Exceptions possible later :**
+        - `RequirementsNotMetException` : if the `context` is not set
 
         ---
 
@@ -214,9 +311,54 @@ The library provides double back press functionality, i.e., actions taken upon c
             => Set the message to be displayed in the Toast
 
         **Returns :**
-        - `FirstBackPressAction`
+        - `ToastDisplay`
 
-        **Throws later if not set:**
-        - `RequirementsNotMetException` : if the context is not set
+        **Exceptions possible later :**
+        - `RequirementsNotMetException` : if the `context` is not set
+
+---
+
+8. Options provided for the SnackbarDisplay constructor :
+
+    ***Note again : The standard method needs to be called after the view is created.***
+
+    - Set the parent view for the Toast
+
+        ```java
+        .standard(View parentView)
+        ```
+
+        **Parameters :**
+        - `parentView` : View
+            => Set the Parent View for the Snackbar to be displayed
+
+        **Returns :**
+        - `SnackbarDisplay`
+
+        **Exceptions possible later :**
+        - `RequirementsNotMetException` : if the `parentView` is not set
+        - `GeneralException` : if the `parentView` was passed to the SnackbarDisplay before it was created
+
+        ---
+
+    - Set the parent view and the message for the Toast
+
+        ```java
+        .standard(View parentView, String message)
+        ```
+
+        **Parameters :**
+        - `parentView` : View
+            => Set the Parent View for the Snackbar to be displayed
+
+        - `message` : String
+            => Set the message to be displayed in the Snackbar
+
+        **Returns :**
+        - `SnackbarDisplay`
+
+        **Exceptions possible later :**
+        - `RequirementsNotMetException` : if the `parentView` is not set
+        - `GeneralException` : if the `parentView` was passed to the SnackbarDisplay before it was created
 
 ---
