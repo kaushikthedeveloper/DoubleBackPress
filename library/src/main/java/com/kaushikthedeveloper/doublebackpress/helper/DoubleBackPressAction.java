@@ -7,5 +7,5 @@ package com.kaushikthedeveloper.doublebackpress.helper;
  * Callable : Used to pass Action to be executed after the DoubleBackPress occurs
  */
 public interface DoubleBackPressAction {
-    public void actionCall();
+    void actionCall();
 }

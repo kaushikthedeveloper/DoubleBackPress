@@ -10,7 +10,7 @@ import java.util.List;
 public class ErrorsManager extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
-	public ErrorsManager(String message) {
+    public ErrorsManager(String message) {
         super(message);
     }
 
@@ -20,7 +20,7 @@ public class ErrorsManager extends RuntimeException {
      * @param messages : List<message>
      * @return errorMessage
      */
-    public static String getErrorMessage(List<String> messages) {
+    private static String getErrorMessagesString(List<String> messages) {
         String errorMessage = "";
         for (String msg : messages) {
             errorMessage = errorMessage.concat(msg + "\n");
@@ -35,6 +35,17 @@ public class ErrorsManager extends RuntimeException {
      * @return throw RequirementsNotMetException
      */
     public static RequirementsNotMetException requirementsNotMet(List<String> messages) {
-        throw new RequirementsNotMetException(getErrorMessage(messages));
+        throw new RequirementsNotMetException(getErrorMessagesString(messages));
     }
+
+    /**
+     * throw Error of type : RequirementsNotMetException
+     *
+     * @param message : Error message
+     * @return throw RequirementsNotMetException
+     */
+    public static RequirementsNotMetException requirementsNotMet(String message) {
+        throw new RequirementsNotMetException(message);
+    }
+
 }

@@ -7,8 +7,8 @@ import android.content.res.Resources;
  * <p>
  * Requirements were not met
  */
-public class RequirementsNotMetException extends Resources.NotFoundException {
-    public RequirementsNotMetException(String message) {
+class RequirementsNotMetException extends Resources.NotFoundException {
+    RequirementsNotMetException(String message) {
         super(message);
     }
 }

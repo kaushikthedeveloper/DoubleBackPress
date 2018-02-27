@@ -44,7 +44,7 @@ class FlowManager extends RequirementsConsolidator {
     /**
      * Checks if all required variables have been set
      * let user know requirements are unfulfilled
-     *
+     * <p>
      * => throw RequirementsNotMetException; when required variable has not been set
      */
     void checkRequiredVariablesSet() {

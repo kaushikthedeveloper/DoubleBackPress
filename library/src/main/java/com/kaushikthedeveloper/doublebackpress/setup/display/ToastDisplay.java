@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.kaushikthedeveloper.doublebackpress.errors.ErrorsManager;
+import com.kaushikthedeveloper.doublebackpress.helper.Constants;
 import com.kaushikthedeveloper.doublebackpress.helper.FirstBackPressAction;
 
 /**
@@ -26,6 +28,7 @@ public class ToastDisplay implements FirstBackPressAction {
      */
     @Override
     public void actionCall() {
+        verifyContextIsSet();
         Toast toast = Toast.makeText(this.context, this.message, Toast.LENGTH_SHORT);
         toast.show();
     }
@@ -55,5 +58,14 @@ public class ToastDisplay implements FirstBackPressAction {
         this.context = context;
         this.message = message;
         return this;
+    }
+
+    /**
+     * Throws RequirementsNotMetException if context is not set
+     */
+    private void verifyContextIsSet() {
+        if (this.context == null) {
+            throw ErrorsManager.requirementsNotMet(Constants.TOAST_DISPLAY_CONTEXT_NOT_SET);
+        }
     }
 }
