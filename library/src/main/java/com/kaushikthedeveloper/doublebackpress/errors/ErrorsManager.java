@@ -18,34 +18,45 @@ public class ErrorsManager extends RuntimeException {
      * Append the Error messages
      *
      * @param messages : List<message>
-     * @return errorMessage
+     * @return errorMessageString
      */
     private static String getErrorMessagesString(List<String> messages) {
-        String errorMessage = "";
+        String errorMessageString = "";
         for (String msg : messages) {
-            errorMessage = errorMessage.concat(msg + "\n");
+            errorMessageString = errorMessageString.concat(msg + "\n");
         }
-        return errorMessage;
+        return errorMessageString;
     }
 
     /**
-     * throw Error of type : RequirementsNotMetException
-     *
-     * @param messages : List<message>
-     * @return throw RequirementsNotMetException
+     * @param messages : List<messages>
+     * throw RequirementsNotMetException
      */
     public static RequirementsNotMetException requirementsNotMet(List<String> messages) {
         throw new RequirementsNotMetException(getErrorMessagesString(messages));
     }
 
     /**
-     * throw Error of type : RequirementsNotMetException
-     *
      * @param message : Error message
-     * @return throw RequirementsNotMetException
+     * throw RequirementsNotMetException
      */
     public static RequirementsNotMetException requirementsNotMet(String message) {
         throw new RequirementsNotMetException(message);
     }
 
+    /**
+     * @param messages : List<messages>
+     * throw GeneralException
+     */
+    public static GeneralException generalException(List<String> messages){
+        throw new GeneralException(getErrorMessagesString(messages));
+    }
+
+    /**
+     * @param message : Error message
+     * throw GeneralException
+     */
+    public static GeneralException generalException(String message){
+        throw new GeneralException(message);
+    }
 }

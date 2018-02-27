@@ -68,6 +68,35 @@ public class DoubleBackPress extends Activity {
         return this;
     }
 
+    /**
+     * REQUIRED
+     * Builder function for setting the wait duration for the second back press (msec)
+     *
+     * @param doublePressDuration : duration of contention for the double back press
+     */
+    public void setDoublePressDuration(int doublePressDuration) {
+        flowManager.setDoublePressDuration(doublePressDuration);
+    }
+
+    /**
+     * REQUIRED
+     * Builder function for setting the action after DoubleBackPress function
+     *
+     * @param doubleBackPressAction : Action Interface - after DoubleBackPress occurs
+     */
+    public void setDoubleBackPressAction(DoubleBackPressAction doubleBackPressAction) {
+        flowManager.setDoubleBackPressAction(doubleBackPressAction);
+    }
+
+    /**
+     * OPTIONAL
+     * Display to be shown upon first back press
+     *
+     * @param firstBackPressAction : Action Interface - after first BackPress occurs
+     */
+    public void setFirstBackPressAction(FirstBackPressAction firstBackPressAction) {
+        flowManager.setFirstBackPressAction(firstBackPressAction);
+    }
 
     /**
      * MAIN FUNCTION : all the required operations happen from here

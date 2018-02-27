@@ -1,8 +1,12 @@
 package com.kaushikthedeveloper.doublebackpress.setup.display;
 
+import android.app.Activity;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 
+import com.kaushikthedeveloper.doublebackpress.errors.ErrorsManager;
+import com.kaushikthedeveloper.doublebackpress.helper.Constants;
 import com.kaushikthedeveloper.doublebackpress.helper.FirstBackPressAction;
 
 /**
@@ -10,9 +14,10 @@ import com.kaushikthedeveloper.doublebackpress.helper.FirstBackPressAction;
  * <p>
  * Snackbar - Standard i
  */
-public class SnackbarDisplay implements FirstBackPressAction {
+public class SnackbarDisplay extends Activity implements FirstBackPressAction {
     private View parentView;
     private String message;
+    private boolean standardFunctionCalled = false;
 
     /**
      * Constructor : use along with standard() to set the snackbar to be displayed
@@ -25,6 +30,7 @@ public class SnackbarDisplay implements FirstBackPressAction {
      */
     @Override
     public void actionCall() {
+        verifyViewIsSet();
         Snackbar snackbar = Snackbar.make(this.parentView, this.message, Snackbar.LENGTH_SHORT);
         snackbar.show();
     }
@@ -38,6 +44,7 @@ public class SnackbarDisplay implements FirstBackPressAction {
     public SnackbarDisplay standard(View view) {
         this.parentView = view;
         this.message = "Press back button to confirm";
+        this.standardFunctionCalled = true;
         return this;
     }
 
@@ -51,6 +58,19 @@ public class SnackbarDisplay implements FirstBackPressAction {
     public SnackbarDisplay standard(View view, String message) {
         this.parentView = view;
         this.message = message;
+        this.standardFunctionCalled = true;
         return this;
+    }
+
+    /**
+     * Throws RequirementsNotMetException if parentView is not set
+     */
+    private void verifyViewIsSet() {
+        if(!this.standardFunctionCalled){
+            throw ErrorsManager.requirementsNotMet(Constants.SNACKBAR_DISPLAY_VIEW_NOT_SET);
+        }
+        if (this.parentView == null) {
+            throw ErrorsManager.requirementsNotMet(Constants.SNACKBAR_DISPLAY_NPE);
+        }
     }
 }
