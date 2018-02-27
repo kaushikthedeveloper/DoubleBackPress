@@ -27,6 +27,13 @@ The library provides double back press functionality, i.e., actions taken upon c
                 .withFirstBackPressAction(...);         //optional
     ```
 
+    or
+
+    ```java
+    DoubleBackPress doubleBackPress = new DoubleBackPress(doublePressDuration, doubleBackPressAction)   //required
+                .withFirstBackPressAction(...);                                                         //optional
+    ```
+
     Put the behaviour of the DoubleBackPress as the desired behaviour upon back button click.
 
     ```java
@@ -129,4 +136,31 @@ The library provides double back press functionality, i.e., actions taken upon c
             Toast.makeText(ExampleActivity.this, "Press back again to Exit", Toast.LENGTH_SHORT).show();
         }
     };
+    ```
+
+5. Standard displays after the first action to be shown to the user:
+
+
+    - `ToastDisplay`
+
+    Example to show toast for Toast.LENGTH_SHORT period of time upon the first back button press, with a message reading "Press back button to confirm".
+
+    ```java
+    FirstBackPressAction firstBackPressAction = new ToastDisplay()
+                .standard(this);                                        //required
+
+    DoubleBackPress doubleBackPress = new DoubleBackPress()
+                .withFirstBackPressAction(firstBackPressAction)
+                ...
+    ```
+
+    Example to show toast for Toast.LENGTH_SHORT period of time upon the first back button press, with a message reading "Press back button to Exit".
+
+    ```java
+    FirstBackPressAction firstBackPressAction = new ToastDisplay()
+                .standard(this, "Press back button to Exit");            //required
+
+    DoubleBackPress doubleBackPress = new DoubleBackPress()
+                .withFirstBackPressAction(firstBackPressAction)
+                ...
     ```
