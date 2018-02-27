@@ -45,7 +45,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 ---
 
-2. Setting the environment using `with...` methods in the builder.
+2. Setting the environment using `with...` methods for the constructor.
 
     - Set the duration within which the 2nd back press needs to occur to be considered a Double Back Press.
 
@@ -172,3 +172,39 @@ The library provides double back press functionality, i.e., actions taken upon c
                 .withFirstBackPressAction(firstBackPressAction)
                 ...
     ```
+
+---
+
+6. Options provided for the ToastDisplay constructor :
+
+    - Set the context for the Toast
+
+        ```java
+        .standard(Context context)
+        ```
+
+        **Parameters :**
+        - `context` : Context
+            => Set the Context for the Toast to be displayed
+
+
+        **Returns :**
+        - `FirstBackPressAction`
+
+
+    - Set the context and the message for the Toast
+
+        ```java
+        .standard(Context context, String message)
+        ```
+
+        **Parameters :**
+        - `context` : Context
+            => Set the Context for the Toast to be displayed
+
+        - `message` : String
+            => Set the message to be displayed in the Toast
+
+
+        **Returns :**
+        - `FirstBackPressAction`
