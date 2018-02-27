@@ -141,9 +141,9 @@ The library provides double back press functionality, i.e., actions taken upon c
 5. Standard displays after the first action to be shown to the user:
 
 
-    - `ToastDisplay`
+    - `ToastDisplay` : standard Toast
 
-    Example to show toast for Toast.LENGTH_SHORT period of time upon the first back button press, with a message reading "Press back button to confirm".
+    Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to confirm".
 
     ```java
     FirstBackPressAction firstBackPressAction = new ToastDisplay()
@@ -154,7 +154,7 @@ The library provides double back press functionality, i.e., actions taken upon c
                 ...
     ```
 
-    Example to show toast for Toast.LENGTH_SHORT period of time upon the first back button press, with a message reading "Press back button to Exit".
+    Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to Exit".
 
     ```java
     FirstBackPressAction firstBackPressAction = new ToastDisplay()
