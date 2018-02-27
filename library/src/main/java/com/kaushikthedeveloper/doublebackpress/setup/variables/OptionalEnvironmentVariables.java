@@ -8,7 +8,7 @@ import com.kaushikthedeveloper.doublebackpress.helper.FirstBackPressAction;
  * Contains the other environment variables involved
  */
 class OptionalEnvironmentVariables extends RequiredVariables {
-    // actions passed : to be executed after 1st Back press
+    // actions passed : to be executed after first Back press
     private FirstBackPressAction firstBackPressAction = null;
 
     public void setFirstBackPressAction(FirstBackPressAction firstBackPressAction) {

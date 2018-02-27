@@ -60,7 +60,7 @@ public class DoubleBackPress extends Activity {
      * OPTIONAL
      * Display to be shown upon first back press
      *
-     * @param firstBackPressAction : Action Interface - after 1st BackPress occurs
+     * @param firstBackPressAction : Action Interface - after first BackPress occurs
      * @return DoubleBackPress
      */
     public DoubleBackPress withFirstBackPressAction(FirstBackPressAction firstBackPressAction) {

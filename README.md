@@ -14,7 +14,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 1. Action to be performed upon double click of back button
 2. Action to be performed upon single click of back button, before the double click occurs
-3. Standard responses after 1st back button click provided
+3. Standard responses after first back button click provided
 
 ## Documentation
 
@@ -74,7 +74,7 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Throws :**
         - `RequirementsNotMetException` : if the doubleBackPressAction is not set
 
-    - Set the action to be performed after the 1st back press occurs, before the 2nd back press.
+    - Set the action to be performed after the first back press occurs, before the 2nd back press.
 
         **OPTIONAL**
 
@@ -84,7 +84,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
         **Parameters :**
         - `firstBackPressAction` : FirstBackPressAction
-            => The action that should be performed after the 1st back button click, before the 2nd back press.
+            => The action that should be performed after the first back button click, before the 2nd back press.
 
         **Returns :**
         - `DoubleBackPress`
@@ -118,9 +118,9 @@ The library provides double back press functionality, i.e., actions taken upon c
     .withFirstBackPressAction(FirstBackPressAction)
     ```
 
-    Override the `actionCall()` method when creating the Object. This method is called when the 1st back press occurs.
+    Override the `actionCall()` method when creating the Object. This method is called when the first back press occurs.
 
-    Below is an example where after the 1st back button press, the Activity shows a Toast to the user.
+    Below is an example where after the first back button press, the Activity shows a Toast to the user.
 
     ```java
     FirstBackPressAction firstBackPressAction = new FirstBackPressAction() {
