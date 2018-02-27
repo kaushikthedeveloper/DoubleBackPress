@@ -2,7 +2,7 @@
 
 The module is in the extremely painful process of being completely remodeled. As always, thank you for your patience.
 
-#### In case of extreme emergency to try out the module ;-) , download the [First commit's Snapshot](https://github.com/kaushikthedeveloper/DoubleBackPress/tree/634d3b242240b81e8006e1afc677f8a1c1ba4b6e) of the project and refer to the example code to get workings!
+**In case of extreme emergency to try out the module ;-) , download the [First commit's Snapshot](https://github.com/kaushikthedeveloper/DoubleBackPress/tree/634d3b242240b81e8006e1afc677f8a1c1ba4b6e) of the project and refer to the example code to get workings!**
 
 ## About
 
@@ -43,7 +43,7 @@ The library provides double back press functionality, i.e., actions taken upon c
     }
     ```
 
-<hr>
+---
 
 2. Setting the environment using `with...` methods in the builder.
 
@@ -65,7 +65,7 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Throws later if not set:**
         - `RequirementsNotMetException` : if the doublePressDuration is not set
 
-    - Set the action to be performed after the DoubleBackPress occurs
+    - Set the action to be performed after the DoubleBackPress occurs.
 
         **REQUIRED**
 
@@ -98,7 +98,7 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `DoubleBackPress`
 
-<hr>
+---
 
 3. Create object of `DoubleBackPressAction`
 
@@ -121,7 +121,7 @@ The library provides double back press functionality, i.e., actions taken upon c
     };
     ```
 
-<hr>
+---
 
 4. Create object of `FirstBackPressAction`
 
@@ -144,7 +144,7 @@ The library provides double back press functionality, i.e., actions taken upon c
     };
     ```
 
-<hr>
+---
 
 5. Standard displays after the first action to be shown to the user:
 
