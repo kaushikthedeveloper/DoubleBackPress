@@ -65,6 +65,8 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Throws later if not set:**
         - `RequirementsNotMetException` : if the doublePressDuration is not set
 
+        ---
+
     - Set the action to be performed after the DoubleBackPress occurs.
 
         **REQUIRED**
@@ -82,6 +84,8 @@ The library provides double back press functionality, i.e., actions taken upon c
 
         **Throws later if not set:**
         - `RequirementsNotMetException` : if the doubleBackPressAction is not set
+
+        ---
 
     - Set the action to be performed after the first back press occurs, before the 2nd back press.
 
@@ -148,7 +152,6 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 5. Standard displays after the first action to be shown to the user:
 
-
     - `ToastDisplay` : standard Toast
 
     Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to confirm".
@@ -187,10 +190,8 @@ The library provides double back press functionality, i.e., actions taken upon c
         - `context` : Context
             => Set the Context for the Toast to be displayed
 
-
         **Returns :**
         - `FirstBackPressAction`
-
 
     - Set the context and the message for the Toast
 
@@ -204,7 +205,6 @@ The library provides double back press functionality, i.e., actions taken upon c
 
         - `message` : String
             => Set the message to be displayed in the Toast
-
 
         **Returns :**
         - `FirstBackPressAction`
