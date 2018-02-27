@@ -154,31 +154,33 @@ The library provides double back press functionality, i.e., actions taken upon c
 
     - `ToastDisplay` : standard Toast
 
-    Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to confirm".
+        Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to confirm".
 
-    ```java
-    FirstBackPressAction firstBackPressAction = new ToastDisplay()
-                .standard(this);                                        //required
+        ```java
+        FirstBackPressAction firstBackPressAction = new ToastDisplay()
+                    .standard(this);                                        //required
 
-    DoubleBackPress doubleBackPress = new DoubleBackPress()
-                .withFirstBackPressAction(firstBackPressAction)
-                ...
-    ```
+        DoubleBackPress doubleBackPress = new DoubleBackPress()
+                    .withFirstBackPressAction(firstBackPressAction)
+                    ...
+        ```
 
-    Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to Exit".
+        Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to Exit".
 
-    ```java
-    FirstBackPressAction firstBackPressAction = new ToastDisplay()
-                .standard(this, "Press back button to Exit");            //required
+        ```java
+        FirstBackPressAction firstBackPressAction = new ToastDisplay()
+                    .standard(this, "Press back button to Exit");            //required
 
-    DoubleBackPress doubleBackPress = new DoubleBackPress()
-                .withFirstBackPressAction(firstBackPressAction)
-                ...
-    ```
+        DoubleBackPress doubleBackPress = new DoubleBackPress()
+                    .withFirstBackPressAction(firstBackPressAction)
+                    ...
+        ```
 
 ---
 
 6. Options provided for the ToastDisplay constructor :
+
+    *Note : Use either of the two standard methods depending on requirements*
 
     - Set the context for the Toast
 
@@ -192,6 +194,11 @@ The library provides double back press functionality, i.e., actions taken upon c
 
         **Returns :**
         - `FirstBackPressAction`
+
+        **Throws later if not set:**
+        - `RequirementsNotMetException` : if the context is not set
+
+        ---
 
     - Set the context and the message for the Toast
 
@@ -208,3 +215,8 @@ The library provides double back press functionality, i.e., actions taken upon c
 
         **Returns :**
         - `FirstBackPressAction`
+
+        **Throws later if not set:**
+        - `RequirementsNotMetException` : if the context is not set
+
+---
