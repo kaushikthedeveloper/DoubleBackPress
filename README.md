@@ -43,6 +43,8 @@ The library provides double back press functionality, i.e., actions taken upon c
     }
     ```
 
+<hr>
+
 2. Setting the environment using `with...` methods in the builder.
 
     - Set the duration within which the 2nd back press needs to occur to be considered a Double Back Press.
@@ -96,6 +98,8 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `DoubleBackPress`
 
+<hr>
+
 3. Create object of `DoubleBackPressAction`
 
     Passed in :
@@ -117,6 +121,8 @@ The library provides double back press functionality, i.e., actions taken upon c
     };
     ```
 
+<hr>
+
 4. Create object of `FirstBackPressAction`
 
     Passed in :
@@ -137,6 +143,8 @@ The library provides double back press functionality, i.e., actions taken upon c
         }
     };
     ```
+
+<hr>
 
 5. Standard displays after the first action to be shown to the user:
 
