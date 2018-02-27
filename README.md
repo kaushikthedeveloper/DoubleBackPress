@@ -62,7 +62,7 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `DoubleBackPress`
 
-        **Throws :**
+        **Throws later if not set:**
         - `RequirementsNotMetException` : if the doublePressDuration is not set
 
     - Set the action to be performed after the DoubleBackPress occurs
@@ -80,7 +80,7 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `DoubleBackPress`
 
-        **Throws :**
+        **Throws later if not set:**
         - `RequirementsNotMetException` : if the doubleBackPressAction is not set
 
     - Set the action to be performed after the first back press occurs, before the 2nd back press.
