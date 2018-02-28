@@ -1,17 +1,10 @@
 # DoubleBackPress : Android Library
 
-The module is in the extremely painful process of being completely remodeled. As always, thank you for your patience.
-
-**In case of extreme emergency to try out the module ;-) , download the [First commit's Snapshot](
-https://github.com/kaushikthedeveloper/DoubleBackPress/tree/634d3b242240b81e8006e1afc677f8a1c1ba4b6e) of the project and refer to 
-the example code to get workings!**
-
 ## About
 
 ### Usage
 
-The library provides double back press functionality, i.e., actions taken upon clicking of back button twice in short 
-(custom predefined) interval of time.
+The library provides double back press functionality, i.e., actions taken upon clicking of back button twice in short (custom predefined) interval of time.
 
 ### Main Functionalities
 
@@ -32,6 +25,8 @@ The library provides double back press functionality, i.e., actions taken upon c
         - [setDoublePressDuration](#setDoublePressDuration)
         - [setDoubleBackPressAction](#setDoubleBackPressAction)
         - [setFirstBackPressAction](#setFirstBackPressAction)
+    - Behaviour modifiers
+        - [onBackPressed](#onBackPressed)
 
 - [DoubleBackPressAction](#DoubleBackPressAction)
 
@@ -44,7 +39,6 @@ The library provides double back press functionality, i.e., actions taken upon c
 - [SnackbarDisplay](#SnackbarDisplay)
     - constructor
         - [standard](#SnackbarDisplayStandard)
-
 
 ---
 
@@ -71,7 +65,7 @@ The library provides double back press functionality, i.e., actions taken upon c
     doubleBackPress.set...(...);                       //setter methods
     ```
 
-    **Assign the behaviour of the DoubleBackPress as the desired behaviour upon back button click.**
+    <a name="onBackPressed"></a>**Assign the behaviour of the DoubleBackPress as the desired behaviour upon back button click.**
 
     ```java
     @Override
@@ -252,8 +246,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
     - <a name="ToastDisplay"></a>`ToastDisplay` : standard Toast
 
-        Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading 
-        "Press back button to confirm".
+        Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to confirm".
 
         ```java
         FirstBackPressAction firstBackPressAction = new ToastDisplay()
@@ -264,8 +257,7 @@ The library provides double back press functionality, i.e., actions taken upon c
                     ...
         ```
 
-        Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading 
-        "Press back button to Exit".
+        Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to Exit".
 
         ```java
         FirstBackPressAction firstBackPressAction = new ToastDisplay()
@@ -278,12 +270,9 @@ The library provides double back press functionality, i.e., actions taken upon c
         
     - <a name="SnackbarDisplay"></a>`SnackbarDisplay` : standard Snackbar
 
-        ***Note : Since Snackbar require the callers's parent view, the SnackbarDisplay class needs to be set and provided to the 
-        DoubleBackPress object after the View is set. Example, in an Activity, this would be inside the onCreate() function, 
-        after the setContentView() function is called.***
+        ***Note : Since Snackbar require the callers's parent view, the SnackbarDisplay class needs to be set and provided to the DoubleBackPress object after the View is set. Example, in an Activity, this would be inside the onCreate() function, after the setContentView() function is called.***
 
-        Example to show snackbar for `Snackbar.LENGTH_SHORT` period of time upon the first back button press, with a message 
-        reading "Press back button to confirm".
+        Example to show snackbar for `Snackbar.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to confirm".
 
         ```java
         //after the view is initialized
@@ -293,8 +282,7 @@ The library provides double back press functionality, i.e., actions taken upon c
         doubleBackPress.setFirstBackPressAction(firstBackPressAction)
         ```
 
-        Example to show snackbar for `Snackbar.LENGTH_SHORT` period of time upon the first back button press, with a message reading 
-        "Press back button to Exit".
+        Example to show snackbar for `Snackbar.LENGTH_SHORT` period of time upon the first back button press, with a message reading "Press back button to Exit".
 
         ```java
         //after the view is initialized
