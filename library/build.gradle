@@ -1,5 +1,31 @@
 apply plugin: 'com.android.library'
 
+//https://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en
+//Links to the JFrog Bintray : provide configs for upload
+ext {
+    bintrayRepo = 'libraries'
+    bintrayName = 'double-back-press'
+
+    publishedGroupId = 'com.github.kaushikthedeveloper'
+    libraryName = 'DoubleBackPress'
+    artifact = 'double-back-press'
+
+    libraryDescription = 'Android Library : Provides Double Back Press functionality'
+
+    siteUrl = 'https://github.com/kaushikthedeveloper/DoubleBackPress'
+    gitUrl = 'https://github.com/kaushikthedeveloper/DoubleBackPress.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'kaushikthedeveloper'
+    developerName = 'Kaushik NP'
+    developerEmail = 'kaushikthedeveloper@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -25,3 +51,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
+
+//scripts for building library files and uploading the built files to bintray
+apply from : 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+apply from : 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
