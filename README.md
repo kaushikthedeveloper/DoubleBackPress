@@ -21,7 +21,32 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 ## Documentation
 
-1. Setup DoubleBackPress
+- [DoubleBackPress](#DoubleBackPress)
+    - Constructor
+        - [withDoublePressDuration](#withDoublePressDuration)
+        - [withDoubleBackPressAction](#withDoubleBackPressAction)
+        - [withFirstBackPressAction](#withFirstBackPressAction)
+    - Methods
+        - [setDoublePressDuration](#setDoublePressDuration)
+        - [setDoubleBackPressAction](#setDoubleBackPressAction)
+        - [setFirstBackPressAction](#setFirstBackPressAction)
+
+- [DoubleBackPressAction](#DoubleBackPressAction)
+
+- [FirstBackPressAction](#FirstBackPressAction)
+
+- [ToastDisplay](#ToastDisplay)
+    - constructor
+        - [standard](#ToastDisplayStandard)
+
+- [SnackbarDisplay](#SnackbarDisplay)
+    - constructor
+        - [standard](#SnackbarDisplayStandard)
+
+
+---
+
+1. <a name="DoubleBackPress"></a>Setup DoubleBackPress
 
     ```java
     DoubleBackPress doubleBackPress = new DoubleBackPress()
@@ -57,7 +82,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 2. Setting the environment using `with...` methods for the DoubleBackPress constructor.
 
-    - Set the duration within which the 2nd back press needs to occur to be considered a Double Back Press.
+    - <a name="withDoublePressDuration"></a>Set the duration within which the 2nd back press needs to occur to be considered a Double Back Press.
 
         **REQUIRED**
 
@@ -72,12 +97,12 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `DoubleBackPress`
 
-        **Exceptions possible later :**
+        **Exceptions possible later if not called :**
         - `RequirementsNotMetException` : if the `doublePressDuration` is not set
 
         ---
 
-    - Set the action to be performed after the DoubleBackPress occurs.
+    - <a name="withDoubleBackPressAction"></a>Set the action to be performed after the DoubleBackPress occurs.
 
         **REQUIRED**
 
@@ -92,12 +117,12 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `DoubleBackPress`
 
-        **Exceptions possible later :**
+        **Exceptions possible later if not called :**
         - `RequirementsNotMetException` : if the `doubleBackPressAction` is not set
 
         ---
 
-    - Set the action to be performed after the first back press occurs, before the 2nd back press.
+    - <a name="withFirstBackPressAction"></a>Set the action to be performed after the first back press occurs, before the 2nd back press.
 
         **OPTIONAL**
 
@@ -116,7 +141,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 3. Setting the environment using `set...` methods for the DoubleBackPress object.
 
-    - Set the duration within which the 2nd back press needs to occur to be considered a Double Back Press.
+    - <a name="setDoublePressDuration"></a>Set the duration within which the 2nd back press needs to occur to be considered a Double Back Press.
 
         **REQUIRED**
 
@@ -131,12 +156,12 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `void`
 
-        **Exceptions possible later :**
+        **Exceptions possible later if not called :**
         - `RequirementsNotMetException` : if the `doublePressDuration` is not set
 
         ---
 
-    - Set the action to be performed after the DoubleBackPress occurs.
+    - <a name="setDoubleBackPressAction"></a>Set the action to be performed after the DoubleBackPress occurs.
 
         **REQUIRED**
 
@@ -151,12 +176,12 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `void`
 
-        **Exceptions possible later :**
+        **Exceptions possible later if not called :**
         - `RequirementsNotMetException` : if the `doubleBackPressAction` is not set
 
         ---
 
-    - Set the action to be performed after the first back press occurs, before the 2nd back press.
+    - <a name="setFirstBackPressAction"></a>Set the action to be performed after the first back press occurs, before the 2nd back press.
 
         **OPTIONAL**
 
@@ -173,7 +198,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 ---
 
-4. Create object of `DoubleBackPressAction`
+4. <a name="DoubleBackPressAction"></a>Create object of `DoubleBackPressAction`
 
     Passed in :
 
@@ -196,7 +221,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 ---
 
-5. Create object of `FirstBackPressAction`
+5. <a name="FirstBackPressAction"></a>Create object of `FirstBackPressAction`
 
     Passed in :
 
@@ -221,7 +246,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 6. Standard displays after the first action to be shown to the user:
 
-    - `ToastDisplay` : standard Toast
+    - <a name="ToastDisplay"></a>`ToastDisplay` : standard Toast
 
         Example to show toast for `Toast.LENGTH_SHORT` period of time upon the first back button press, with a message reading 
         "Press back button to confirm".
@@ -247,7 +272,7 @@ The library provides double back press functionality, i.e., actions taken upon c
                     ...
         ```
         
-    - `SnackbarDisplay` : standard Snackbar
+    - <a name="SnackbarDisplay"></a>`SnackbarDisplay` : standard Snackbar
 
         ***Note : Since Snackbar require the callers's parent view, the SnackbarDisplay class needs to be set and provided to the 
         DoubleBackPress object after the View is set. Example, in an Activity, this would be inside the onCreate() function, 
@@ -277,7 +302,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 ---
 
-7. Options provided for the ToastDisplay constructor :
+7. <a name="ToastDisplayStandard"></a>Options provided for the ToastDisplay constructor :
 
     - Set the context for the Toast
 
@@ -292,7 +317,7 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `ToastDisplay`
 
-        **Exceptions possible later :**
+        **Exceptions possible later if not called :**
         - `RequirementsNotMetException` : if the `context` is not set
 
         ---
@@ -313,12 +338,12 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `ToastDisplay`
 
-        **Exceptions possible later :**
+        **Exceptions possible later if not called :**
         - `RequirementsNotMetException` : if the `context` is not set
 
 ---
 
-8. Options provided for the SnackbarDisplay constructor :
+8. <a name="SnackbarDisplayStandard"></a>Options provided for the SnackbarDisplay constructor :
 
     ***Note again : The standard method needs to be called after the view is created.***
 
@@ -335,7 +360,7 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `SnackbarDisplay`
 
-        **Exceptions possible later :**
+        **Exceptions possible later if not called :**
         - `RequirementsNotMetException` : if the `parentView` is not set
         - `GeneralException` : if the `parentView` was passed to the SnackbarDisplay before it was created
 
@@ -357,7 +382,7 @@ The library provides double back press functionality, i.e., actions taken upon c
         **Returns :**
         - `SnackbarDisplay`
 
-        **Exceptions possible later :**
+        **Exceptions possible later if not called :**
         - `RequirementsNotMetException` : if the `parentView` is not set
         - `GeneralException` : if the `parentView` was passed to the SnackbarDisplay before it was created
 
