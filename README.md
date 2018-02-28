@@ -84,7 +84,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 2. Setting the environment using `with...` methods for the DoubleBackPress constructor.
 
-    - <a name="withDoublePressDuration"></a>Set the duration within which the 2nd back press needs to occur to be considered a Double Back Press.
+    - <a name="withDoublePressDuration"></a>Set the duration within which the second back press needs to occur to be considered a Double Back Press.
 
         **REQUIRED**
 
@@ -93,8 +93,8 @@ The library provides double back press functionality, i.e., actions taken upon c
         ```
 
         **Parameters :**
-        - `doublePressDuration` : int
-            => msec duration period, within which the back press should occur again to be counted as a DoubleBackPress
+        - `doublePressDuration` : int \<milli seconds\>
+            => timeout period, within which the back press should occur again to be counted as a DoubleBackPress
 
         **Returns :**
         - `DoubleBackPress`
@@ -124,7 +124,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
         ---
 
-    - <a name="withFirstBackPressAction"></a>Set the action to be performed after the first back press occurs, before the 2nd back press.
+    - <a name="withFirstBackPressAction"></a>Set the action to be performed after the first back press occurs, before the second back press.
 
         **OPTIONAL**
 
@@ -134,7 +134,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
         **Parameters :**
         - `firstBackPressAction` : FirstBackPressAction
-            => The action that should be performed after the first back button click, before the 2nd back press.
+            => The action that should be performed after the first back button click, before the second back press.
 
         **Returns :**
         - `DoubleBackPress`
@@ -143,7 +143,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 3. Setting the environment using `set...` methods for the DoubleBackPress object.
 
-    - <a name="setDoublePressDuration"></a>Set the duration within which the 2nd back press needs to occur to be considered a Double Back Press.
+    - <a name="setDoublePressDuration"></a>Set the duration within which the second back press needs to occur to be considered a Double Back Press.
 
         **REQUIRED**
 
@@ -183,7 +183,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
         ---
 
-    - <a name="setFirstBackPressAction"></a>Set the action to be performed after the first back press occurs, before the 2nd back press.
+    - <a name="setFirstBackPressAction"></a>Set the action to be performed after the first back press occurs, before the second back press.
 
         **OPTIONAL**
 
@@ -193,7 +193,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
         **Parameters :**
         - `firstBackPressAction` : FirstBackPressAction
-            => The action that should be performed after the first back button click, before the 2nd back press.
+            => The action that should be performed after the first back button click, before the second back press.
 
         **Returns :**
         - `void`
@@ -208,7 +208,7 @@ The library provides double back press functionality, i.e., actions taken upon c
     .withDoubleBackPressAction(DoubleBackPressAction)
     ```
 
-    Override the `actionCall()` method when creating the Object. This method is called when the 2nd back press occurs.
+    Override the `actionCall()` method when creating the Object. This method is called when the second back press occurs.
 
     Below is an example where after the DoubleBackPress, the Activity calls its original `onBackPressed()` method.
 
