@@ -71,7 +71,7 @@ The library provides double back press functionality, i.e., actions taken upon c
     doubleBackPress.set...(...);                       //setter methods
     ```
 
-    Put the behaviour of the DoubleBackPress as the desired behaviour upon back button click.
+    **Assign the behaviour of the DoubleBackPress as the desired behaviour upon back button click.**
 
     ```java
     @Override
@@ -247,6 +247,8 @@ The library provides double back press functionality, i.e., actions taken upon c
 ---
 
 6. Standard displays after the first action to be shown to the user:
+
+    **HELPER CLASSES**
 
     - <a name="ToastDisplay"></a>`ToastDisplay` : standard Toast
 
