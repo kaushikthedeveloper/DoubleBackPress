@@ -21,6 +21,8 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 ## Documentation
 
+### Index
+
 - [DoubleBackPress](#DoubleBackPress)
     - Constructor
         - [withDoublePressDuration](#withDoublePressDuration)
