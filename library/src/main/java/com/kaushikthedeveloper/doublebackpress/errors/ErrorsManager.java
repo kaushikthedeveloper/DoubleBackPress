@@ -17,7 +17,7 @@ public class ErrorsManager extends RuntimeException {
     /**
      * Append the Error messages
      *
-     * @param messages : List<message>
+     * @param messages : List of messages
      * @return errorMessageString
      */
     private static String getErrorMessagesString(List<String> messages) {
@@ -29,7 +29,7 @@ public class ErrorsManager extends RuntimeException {
     }
 
     /**
-     * @param messages : List<messages>
+     * @param messages : List of messages
      * throw RequirementsNotMetException
      */
     public static RequirementsNotMetException requirementsNotMet(List<String> messages) {
@@ -45,7 +45,7 @@ public class ErrorsManager extends RuntimeException {
     }
 
     /**
-     * @param messages : List<messages>
+     * @param messages : List of messages
      * throw GeneralException
      */
     public static GeneralException generalException(List<String> messages){

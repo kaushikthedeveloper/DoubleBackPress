@@ -9,8 +9,8 @@ import java.util.List;
  * Created by Kaushik NP (https://github.com/kaushikthedeveloper) on 22-02-2018.
  * <p>
  * Keeps track of the status of the environment and required variables
- * => Confirms that the variables are set
- * => Provides error messages
+ * : Confirms that the variables are set
+ * : Provides error messages
  */
 public class RequirementsConsolidator extends OptionalEnvironmentVariables {
 
@@ -34,7 +34,7 @@ public class RequirementsConsolidator extends OptionalEnvironmentVariables {
      * Check if the Required
      * Provide a list of Error Messages to be thrown
      *
-     * @return List<message>
+     * @return List of message
      */
     protected List<String> requiredVariablesNotSetMessages() {
         List<String> messages = new ArrayList<>();
