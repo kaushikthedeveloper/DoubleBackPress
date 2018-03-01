@@ -14,7 +14,7 @@ public class ExampleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example);
-        firstBackPressAction = new SnackbarDisplay().standard(getCurrentFocus());
+        firstBackPressAction = new SnackbarDisplay().standard(findViewById(R.id.parent));
         doubleBackPress.setFirstBackPressAction(firstBackPressAction);
     }
 
