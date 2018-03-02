@@ -14,7 +14,18 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 ## Documentation
 
-### Index
+### Load the library
+
+Add the dependency to your module's `build.gradle` :
+```
+dependencies {
+    implementation 'com.github.kaushikthedeveloper:double-back-press:0.0.1'
+}
+```
+
+---
+
+### API Index
 
 - [DoubleBackPress](#DoubleBackPress)
     - Constructor
