@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">DoubleBackPressLibrary</string>
+
+    <string name="simple_ex_title">Simplest Program</string>
+    <string name="toast_ex_title">Toast Exit Display</string>
+    <string name="snackbar_ex_title">Snackbar Back Display</string>
+
+    <string name="simple_ex_info">
+        &#x2022; Show Toast on DoubleBackPress
+    </string>
+
+    <string name="toast_ex_info">
+        &#x2022; Show Toast on FirstBackPress\n&#x2022; Exit on DoubleBackPress
+    </string>
+
+    <string name="snackbar_ex_info">
+        &#x2022; Show SnackBar on FirstBackPress\n&#x2022; Execute the default back press action
+    </string>
+
+
+    <string-array name="example_list_titles">
+        <item>@string/simple_ex_title</item>
+        <item>@string/toast_ex_title</item>
+        <item>@string/snackbar_ex_title</item>
+    </string-array>
+
+    <string-array name="example_list_infos">
+        <item>@string/simple_ex_info</item>
+        <item>@string/toast_ex_info</item>
+        <item>@string/snackbar_ex_info</item>
+    </string-array>
+
+
 </resources>
