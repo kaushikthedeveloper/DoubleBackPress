@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".SimplestProgramActivity">
+        </activity>
+        <activity android:name=".ToastDisplayActivity">
+        </activity>
+        <activity android:name=".SnackbarDisplayActivity">
+        </activity>
     </application>
 
 </manifest>

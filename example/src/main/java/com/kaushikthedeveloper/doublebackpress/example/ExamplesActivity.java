@@ -1,5 +1,6 @@
 package com.kaushikthedeveloper.doublebackpress.example;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,9 +16,6 @@ import java.util.List;
 
 public class ExamplesActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private List<ExamplesListData> data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,22 +23,22 @@ public class ExamplesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_example);
         mRecyclerView = findViewById(R.id.my_recycler_view);
 
-        mLayoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setHasFixedSize(true);
 
         setupAdapterData();
+        setupOnListClicked();
     }
 
     /**
      * Update the data onto Adapter
      */
-    public void setupAdapterData()
-    {
-        data = fillData();
+    public void setupAdapterData() {
+        List<ExamplesListData> examplesData = fillData();
 
         // specify an adapter
-        mAdapter = new ExamplesListAdapter(data, this);
+        RecyclerView.Adapter mAdapter = new ExamplesListAdapter(examplesData, this);
         mRecyclerView.setAdapter(mAdapter);
     }
 
@@ -64,16 +62,25 @@ public class ExamplesActivity extends AppCompatActivity {
     }
 
     /**
-     * On Click of card, set the data of BottomSheet call
+     * On Click of card, open the corresponding Activity
      */
     public void setupOnListClicked() {
         RecyclerClickSupport.addTo(mRecyclerView).setOnItemClickListener(new RecyclerClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                Intent intent = null;
                 switch (position) {
                     case 0:
+                        intent = new Intent(ExamplesActivity.this, SimplestProgramActivity.class);
+                        break;
+                    case 1:
+                        intent = new Intent(ExamplesActivity.this, ToastDisplayActivity.class);
+                        break;
+                    case 2:
+                        intent = new Intent(ExamplesActivity.this, SnackbarDisplayActivity.class);
                         break;
                 }
+                ExamplesActivity.this.startActivity(intent);
             }
         });
     }
