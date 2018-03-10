@@ -12,7 +12,7 @@ import com.kaushikthedeveloper.doublebackpress.setup.display.SnackbarDisplay;
  * SnackbarDisplay on FirstBackPress + default back press behaviour on SecondBackPress
  */
 public class SnackbarDisplayActivity extends AppCompatActivity {
-    FirstBackPressAction firstBackPressAction;
+    DoubleBackPress doubleBackPress = new DoubleBackPress();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,23 +21,21 @@ public class SnackbarDisplayActivity extends AppCompatActivity {
 
         // set SnackbarDisplay Action on FirstBackPress
         // IMP : Below two lines of code should always be called after setContentView() is called
-        firstBackPressAction = new SnackbarDisplay().standard(findViewById(R.id.parentView),
-                "Press again to call default back behaviour");
+        FirstBackPressAction firstBackPressAction = new SnackbarDisplay()
+                .standard(findViewById(R.id.parentView), "Press again to call default back behaviour");
         doubleBackPress.setFirstBackPressAction(firstBackPressAction);
+
+        // set the Action on DoubleBackPress : call the default back press behaviour
+        DoubleBackPressAction doubleBackPressAction = new DoubleBackPressAction() {
+            @Override
+            public void actionCall() {
+                SnackbarDisplayActivity.super.onBackPressed();
+            }
+        };
+        doubleBackPress.setDoubleBackPressAction(doubleBackPressAction);
+
+        doubleBackPress.setDoublePressDuration(3000);
     }
-
-    // set the Action on DoubleBackPress : call the default back press behaviour
-    DoubleBackPressAction doubleBackPressAction = new DoubleBackPressAction() {
-        @Override
-        public void actionCall() {
-            SnackbarDisplayActivity.super.onBackPressed();
-        }
-    };
-
-    // setup DoubleBackPress behaviour
-    DoubleBackPress doubleBackPress = new DoubleBackPress()
-            .withDoublePressDuration(3000)
-            .withDoubleBackPressAction(doubleBackPressAction);
 
     /**
      * Override the onBackPressed with DoubleBackPress behaviour for back press

@@ -6,17 +6,37 @@
     <string name="snackbar_ex_title">SnackbarDisplay Back</string>
 
     <string name="simple_ex_info">
-        &#x2022; Show Toast on DoubleBackPress
+        \n&#x2022; Show Toast on DoubleBackPress
     </string>
 
     <string name="toast_ex_info">
-        &#x2022; Show Toast on FirstBackPress\n&#x2022; Use the ToastDisplay\n&#x2022; Exit on DoubleBackPress
+        \n&#x2022; Show Toast on FirstBackPress
+        \n&#x2022; Use the ToastDisplay
+        \n&#x2022; Exit on DoubleBackPress
     </string>
 
     <string name="snackbar_ex_info">
-        &#x2022; Show SnackBar on FirstBackPress\n&#x2022; Use the SnackbarDisplay\n&#x2022; Execute the default back press action
+        \n&#x2022; Show SnackBar on FirstBackPress
+        \n&#x2022; Use the SnackbarDisplay
+        \n&#x2022; Execute the default back press action
     </string>
 
+    <string name="simple_ex_details">
+        \n => DoubleBackPressAction : Toast message
+        \n => Set duration for 3000ms
+    </string>
+
+    <string name="toast_ex_details">
+        \n => FirstBackPressAction : ToastDisplay
+        \n => DoubleBackPressAction : Exit from the Activity
+        \n => Set duration for 3000ms
+    </string>
+
+    <string name="snackbar_ex_details">
+        \n => FirstBackPressAction : SnackbarDisplay
+        \n => DoubleBackPressAction : Default back press behaviour reset
+        \n => Set duration for 3000ms
+    </string>
 
     <string-array name="example_list_titles">
         <item>@string/simple_ex_title</item>
