@@ -16,17 +16,19 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 1. [Simple program](https://github.com/kaushikthedeveloper/DoubleBackPress/blob/master/example/src/main/java/com/kaushikthedeveloper/doublebackpress/example/SimplestProgramActivity.java)
 
-![simple-program.gif](https://github.com/kaushikthedeveloper/DoubleBackPress/blob/master/art/simple-program.gif?raw=true)
-
+![simple-program.gif](https://github.com/kaushikthedeveloper/DoubleBackPress/blob/master/art/simple-program-small.gif?raw=true)
+<br>
 
 2. [ToastDisplay + Exit Activity](https://github.com/kaushikthedeveloper/DoubleBackPress/blob/master/example/src/main/java/com/kaushikthedeveloper/doublebackpress/example/ToastDisplayActivity.java)
 
-![toastdisplay-exit.gif](https://github.com/kaushikthedeveloper/DoubleBackPress/blob/master/art/ToastDisplay-exit.gif?raw=true)
+![toastdisplay-exit.gif](https://github.com/kaushikthedeveloper/DoubleBackPress/blob/master/art/ToastDisplay-exit-small.gif?raw=true)
+<br>
 
 
 3. [SnackbarDisplay + Default back press behaviour](https://github.com/kaushikthedeveloper/DoubleBackPress/blob/master/example/src/main/java/com/kaushikthedeveloper/doublebackpress/example/SnackbarDisplayActivity.java)
 
-![snackbardisplay-back](https://github.com/kaushikthedeveloper/DoubleBackPress/blob/master/art/Snackbar-back.gif?raw=true)
+![snackbardisplay-back](https://github.com/kaushikthedeveloper/DoubleBackPress/blob/master/art/SnackbarDisplay-back-small.gif?raw=true)
+<br>
 
 ## Documentation
 
