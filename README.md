@@ -12,7 +12,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 2. Action to be performed upon single click of back button, before the double click occurs
 3. Standard responses after first back button click provided
 
-### Examples
+## Examples
 
 **To run the Examples, build and execute the [example](https://github.com/kaushikthedeveloper/DoubleBackPress/tree/master/example) module.**
 
