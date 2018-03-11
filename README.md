@@ -1,5 +1,8 @@
 # DoubleBackPress : Android Library
 
+[ ![Bintray](https://api.bintray.com/packages/kaushikthedeveloper/libraries/double-back-press/images/download.svg)](https://bintray.com/kaushikthedeveloper/libraries/double-back-press/_latestVersion) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
+
+
 ## About
 
 ### Usage
