@@ -13,7 +13,7 @@ The library provides double back press functionality, i.e., actions taken upon c
 
 1. Action to be performed upon double click of back button
 2. Action to be performed upon single click of back button, before the double click occurs
-3. Standard responses after first back button click provided
+3. Standard responses (templates) after back button click
 
 ## Examples
 
